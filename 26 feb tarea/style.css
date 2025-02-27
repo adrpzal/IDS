@@ -19,15 +19,16 @@
 
 /* contenedor de todas las tarjetas */
 #pokeGrid{  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
     text-align: center; 
     margin-top: 5vh; 
-    background-color: rgb(181, 176, 176);
-    width: 100vw;
-    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    width: 90vw;
     overflow: scroll;
-    display: flex;
     align-items: center;
-    overflow-x: scroll;
 }
 
 /* div contenedor de cada tarjeta */
