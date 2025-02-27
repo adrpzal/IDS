@@ -4,17 +4,20 @@
 
 }
 
+/*encabezado de la pagina*/
 .title{
     padding-top: 2vh;
     text-align: center;
     text-transform: uppercase;
 }
 
+/*boton para llamar a api*/
 #getAPIBtn{
     margin-top: 2vh;
     margin-left: 2vw;
 }
 
+/* contenedor de todas las tarjetas */
 #pokeGrid{  
     text-align: center; 
     margin-top: 5vh; 
@@ -27,7 +30,7 @@
     overflow-x: scroll;
 }
 
-
+/* div contenedor de cada tarjeta */
 .pokeCard{
     width: 400px;
     height: 200px;    
@@ -40,15 +43,23 @@
    
 }
 
+/* contenedor del nombre de pokemon */
 .pokeCard h4{
     text-transform: uppercase;
 }
 
+/*div contenedor de detalles del pokemon */
 .infoPokemon{
-    background-color: red;
+    /* background-color: red; */
     z-index: 0;
     display: none;
+    text-align: start;
    
+}
+
+ /*div contenedor de l aimagen y del div de detalles*/ 
+.contenedorInfoImagen{
+    padding-top: 2vh;
 }
 
 

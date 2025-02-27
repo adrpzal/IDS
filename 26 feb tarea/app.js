@@ -47,9 +47,9 @@ function getDataPoke(url,imgContainerID) {
             img.innerHTML = `
             <img src="${data.sprites.front_shiny}" onclick="showData(${data.id})"/>
             <div class="infoPokemon" id="pokemon${data.id}">
-            <span>Altura: ${data.height}</span>
-            <span>${data.height}</span>
-            <span>${data.height}</span>
+            <p>Altura: ${data.height}</p>
+            <p>Especie: ${data.species.name}</p>
+            <p>Habilidad: ${data.abilities[0]. ability.name}</p>
             </div>
             `;
         })
