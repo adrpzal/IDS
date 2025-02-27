@@ -20,7 +20,7 @@ getAPI.addEventListener('click', function(){
                 <div class="pokeCard">
                     <h4>${item.name}</h4>
                     <div><a href="${item.url}">Informaciòn</a></div>
-                    <div id="${imgContainerID}"></div>
+                    <div id="${imgContainerID}" class="contenedorInfoImagen"></div>
                 </div>
                 `;
                 
@@ -47,7 +47,7 @@ function getDataPoke(url,imgContainerID) {
             img.innerHTML = `
             <img src="${data.sprites.front_shiny}" onclick="showData(${data.id})"/>
             <div class="infoPokemon" id="pokemon${data.id}">
-            <span>${data.height}</span>
+            <span>Altura: ${data.height}</span>
             <span>${data.height}</span>
             <span>${data.height}</span>
             </div>
@@ -56,11 +56,12 @@ function getDataPoke(url,imgContainerID) {
         .catch(error =>{console.error(error)});
 }
 
-function showData(id) {
-    
+function showData(id) {    
     let divID = "pokemon"+id;
     console.log("el id es: "+divID)
     let descript = document.getElementById(divID);
     descript.style.display = "block";
 }
+
+
 
