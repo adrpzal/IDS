@@ -45,7 +45,7 @@ function getDataPoke(url,imgContainerID) {
             //identificamos contenedor de imagen (si funciona)
             let img = document.getElementById(imgContainerID);
             img.innerHTML = `
-            <img src="${data.sprites.front_shiny}" onclick="showData(${data.id})"/>
+            <img src="${data.sprites.front_shiny}" onclick="showData(${data.id})" width="100"/>
             <div class="infoPokemon" id="pokemon${data.id}">
             <p>Altura: ${data.height}</p>
             <p>Especie: ${data.species.name}</p>
@@ -60,7 +60,13 @@ function showData(id) {
     let divID = "pokemon"+id;
     console.log("el id es: "+divID)
     let descript = document.getElementById(divID);
-    descript.style.display = "block";
+    //descript.style.display = "block";
+
+    if (descript.style.display === "block") {
+        descript.style.display = "none";
+    }else{
+        descript.style.display = "block"
+    }
 }
 
 
