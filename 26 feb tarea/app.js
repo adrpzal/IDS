@@ -5,7 +5,7 @@ getAPI.addEventListener('click', function(){
     listado.innerHTML = "";
     let cardContent = "";
 
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=16&offset=0')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=32&offset=0')
         .then(response =>{return response.json()})
         .then(data =>{
             console.log(data)
