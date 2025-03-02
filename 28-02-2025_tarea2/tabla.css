@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 14;     
+}
+
+body{
+    background-color: aliceblue;
+}
+
+h1{
+    text-align: center;
+    margin-top: 2vh;
+    color: rgb(42, 116, 0);
+}
+
+.tablacontainer{
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+
+.tabla{
+    border-collapse: collapse;
+    /* border: solid 2px;
+    border-radius: 10px; */
+    background-color: rgb(229, 229, 229);
+    cursor: pointer;
+    padding: 5px;
+    opacity: 50%;
+    transition: opacity 0.5s;
+}
+
+.tabla:hover{
+    opacity: 100%;
+}
+
+.cabeceratabla{       
+    border: solid 2px;
+    /* background-color: red; */
+    text-transform: uppercase;
+}
+
+tbody{
+    border: solid 2px;
+    border-color: black;    
+}
+
+td, th{    
+    padding: 5px;    
+    border: 2px solid rgb(106, 106, 106);
+}
+
+.mitadtabla{
+    text-align: center;
+}
+
+
+.filauno{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.filacantidad{
+    text-align: center;
+    color: green;
+}
+
+.filaprecio{
+    color: blue;
+}
+
+.filadisponible{
+    text-align: center;
+    color: red;
+    border-style: dotted;
+}
