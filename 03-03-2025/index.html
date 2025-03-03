@@ -1,0 +1,38 @@
+<!-- ACTIVIDAD de formularios -->
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTTML Forms</title>
+    </head>
+    <body>
+        <form action="">
+            <label for="pass">Pass</label>
+            <input type="password" id="pass">
+            <br>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" required placeholder="escribe tu nombre">
+            <br>
+            <label for="acept">Si a todo</label>
+            <input type="checkbox" id="acept">
+            <br>
+            <label for="option">Selecciona una opcion</label>
+            <input type="radio" id="option1" name="option">"A"
+            <input type="radio" id="option2" name="option">"B"
+            <br>
+            <label for="options">Selecciona pais de origen</label>
+            <select name="options" id="options">
+                <option selected value="Selecciona pais">Selecciona uno</option>
+                <option value="mexico">mexico</option>
+                <option value="brasil">brasil</option>
+                <option value="paraguay">paraguay</option>
+            </select>
+            <br>
+            <textarea name="" id="" maxlength="10"></textarea>
+            <input type="button" value="Enviar" id="sendbutton">
+        </form>    
+    </body>
+    <script src="script.js"></script>
+</html>
