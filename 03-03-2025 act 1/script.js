@@ -2,6 +2,7 @@ let botonSend = document.getElementById("sendbutton")
 
 botonSend.addEventListener("click", function (event) {
     event.preventDefault();
+    
     const pass = document.getElementById("pass");
     const nombre = document.getElementById("nombre");
     const acept = document.getElementById("acept");
