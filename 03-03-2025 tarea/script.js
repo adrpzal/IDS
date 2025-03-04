@@ -7,7 +7,6 @@ buttonLogin.addEventListener("click", function (event) {
 
     const userTyped = document.getElementById("inputUser");
     const pwdTped = document.getElementById("inputPwd");
-    console.log("sdfgfh")
     if (userTyped.value === "" || pwdTped.value === "" ) {
         console("Los campos no deben estar vacìos");
         return
