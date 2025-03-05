@@ -11,35 +11,37 @@ const listado = [
     "México",
     "Perú",
     "Reino Unido",
-]
+];
 
 let dataList = document.getElementById("paises");
 let inputTxt = document.getElementById("inputSearch");
-let texto = '';
 
-inputTxt.addEventListener("input", function ({data}) {
-    let escrito = data
-    // let escrito = event.data
-    texto += escrito;
-    let listaFiltrada = [];     
 
-    if (texto.length < 3) {return}    
-    listaFiltrada = listado.filter((element) => {
-       return element === texto || element.includes(texto);
+inputTxt.addEventListener("input", function (event) {
+        
+    let texto = event.target.value.toLowerCase();
+
+    let listaFiltrada = listado.filter((element) => {
+        return element.toLowerCase().includes(texto);
     });
 
-    console.log(listaFiltrada);
+    console.log(listaFiltrada);        
+
+    dataList.innerHTML = '';
+    // creamos lista          
+    listaFiltrada.forEach((option) => {
+        let opcion = document.createElement('option');
+        opcion.value = option;
+        dataList.appendChild(opcion)
+    });
+
+})
 
 
-    // creamos lsita
-    const ul = document.createElement('ol');
-    if (listaFiltrada.length > 0) {        
-        listaFiltrada.forEach((option) => {
-            const li = document.createElement('li');
-            li.innerText = option;
-            ul.appendChild(li);
-            document.body.appendChild(ul);
-        });
-    }
+let seleccion = document.getElementById("inputSearch");
+let txtsearch = "https://www.google.com/search?q=";
 
+seleccion.addEventListener("change", function () {
+    console.log(seleccion.value)
+    window.location.href = txtsearch+seleccion.value;
 })
