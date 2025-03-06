@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(136, 60, 212);
+    /* fallback rules or values */
+    /* background-image: url(https://img.freepik.com/vector-gratis/fondo-hexagonal-oscuro-color-degradado_79603-1409.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 15px;
+}
+
+p{
+    font-size: 1em;
+}

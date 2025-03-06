@@ -1,0 +1,80 @@
+<!-- Tarea etiquetas HTML -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Países</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Lista de Países</h1>
+
+        <!-- FILAS DE TABLA -->
+        <template id="filaTemplate">
+            <tr>
+                <td class="pais"></td>
+                <td>ND</td>
+                <td>ND</td>
+            </tr>
+        </template>
+
+        <table >
+            <thead>
+                <tr>
+                    <th>País</th>
+                    <th>Ubicación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCuerpo">
+            </tbody>
+        </table>
+
+        <figure>
+            <img src="mapa.jpg" alt="Mapa del mundo" width="300">
+            <figcaption>Mapa mundial con los países seleccionados</figcaption>
+        </figure>
+
+        <label for="inputTxt">Selecciona un país:</label>
+        <input list="listado" id="inputTxt">
+        <datalist id="listado">
+            <option value="Argentina"></option>
+            <option value="Brasil"></option>
+            <option value="Canadá"></option>
+            <option value="Chile"></option>
+            <option value="España"></option>
+            <option value="México"></option>
+            <option value="Perú"></option>
+        </datalist>
+
+        <input type="button" value="Agregar" id="btnAgregar">
+
+        <details>
+            <summary>Detalles</summary>
+            <p>Selecciona un país de la lista y haz clic en "Agregar" para añadirlo a la tabla.</p>
+        </details>
+
+    </section>
+
+    <footer>
+        <summary>IDS Beca Cells 2025</summary>
+    </footer>
+
+    <script src="script.js">
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+}
+
+/* class */
+.bold{
+    font-weight: bold;
+}
+
+/* type */
+p{
+    margin-top: 2vh;
+    color: gray;
+}
+
+/* pseudo class */
+p:hover{
+    color: black;
+}
+
+/* pseuo element */
+p::first-letter{
+    color: brown;
+}
+
+/* attribute */
+[class=bold]{
+    color: yellow;
+}
+
+/* combinadores  >, ' ', + */
+
+/* > hijos */
+section > article > p{
+    color: red;
+}
+
+/* ' ' descendientes */
+section p {
+    color: aquamarine;
+}
+
+/* + hermanos */
+h1 + p{
+    color: blue;
+}
+
