@@ -1,0 +1,193 @@
+@font-face {
+    font-family: "fuente";
+    src: url("assets/fonts/DMSans-VariableFont_opsz,wght.ttf");     
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.morado { background-color: #7651dc; color: white; }
+.amarillo { background-color: #FFC857; color: black; }
+.amarilloclaro { background-color: #F4E1C1; color: black; }
+.blanco { background-color: white; color: black; }
+.moradoclaro { background-color: #DCCFFF; color: black; }
+
+
+
+
+
+h2, h3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+p{
+    margin-top: 7px;
+}
+
+body {
+    font-family: "fuente", sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr); 
+    gap: 25px;
+    padding: 100px;
+}
+
+/* grid-area: row-start / column-start / row-end / column-end; */
+.card0 {
+    grid-area: 1 / 1 / 4 / 2;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.btn { 
+    margin-top: 20px;
+    display: flex;
+    opacity: .7; 
+    align-items: center;
+    justify-content: center;
+}
+.btn:hover { opacity: 1}
+
+.letterpurple {
+    color: #7651dc;
+    font-size: 40px;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+}
+
+
+
+.card1 {
+    grid-area: 1 / 2 / 3 / 4;
+    grid-column: span 2;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+}
+
+.card1 h2{
+    font-size: 40px;
+}
+
+.letteryellow {
+    color: #FFC857;
+}
+
+.stars{
+    display: flex;
+    align-items: center ;
+}
+
+.card2 {
+    grid-area: 1 / 4 / 5 / 5;
+    padding: 20px;
+    border-radius: 10px; 
+    line-height: 25px;
+    font-size: 20px;     
+}
+
+.card2 p{
+    margin-top: 20px;
+}
+
+.chart{
+   
+    margin-top: 20px;    
+    /* margin-right: -50px; */
+}
+
+.grow {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card3 {
+    grid-area: 4 / 1 / 7 / 2;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 25px;
+    font-size: 20px;
+  
+}
+
+.chatbox {    
+    margin-top: 20px;
+}
+
+
+.card4 {
+    grid-area: 3 / 2 / 5 / 3;
+    padding: 20px;
+    border-radius: 10px;   
+}
+
+
+
+
+.card5 {
+    grid-area: 3 / 3 / 5 / 4;
+    padding: 20px 20px 0 20px;
+    border-radius: 10px; 
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    bottom: 0; 
+}
+
+.card6 {
+    grid-area: 5 / 2 / 7 / 3;
+    padding: 20px;
+    border-radius: 10px;  
+}
+
+.emojisbox{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card7 {
+    grid-area: 5 / 3 / 7 / 5;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+}
+
+.grow img{
+}
+
+
+
+
+
+
