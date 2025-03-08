@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(136, 60, 212);
+    /* fallback rules or values */
+    /* background-image: url(https://img.freepik.com/vector-gratis/fondo-hexagonal-oscuro-color-degradado_79603-1409.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 15px;
+}
+
+
+article{
+    font-size: 1.2em;
+    border: 1px solid red;
+    position: static;
+}
+
+p{
+    /* font-size: initial; */
+    font-size: unset;
+    /* font-size: inherit; */
+    text-align: center;
+    text-align: left;
+    text-align: right;
+}
+
+#b{
+    background-color: red;
+    margin: 0 0 0 0; /* shorthand*/
+    padding: 0 0 0 0; /* shorthand */
+    position: relative;
+}
+
+a{
+  box-sizing: content-box;
+}
+
+span{
+    
+    display: block;
+}
+
+#jaja{
+    height: 500px;
+    overflow: scroll;
+    position: relative;
+}
+
+#parentA{
+    background-color: rgb(182, 106, 13);
+    top: 0;
+    left: 5px;
+    height: 200px;
+    position: sticky;
+}
