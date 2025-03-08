@@ -16,9 +16,6 @@
 .moradoclaro { background-color: #DCCFFF; color: black; }
 
 
-
-
-
 h2, h3 {
     margin-top: 10px;
     font-weight: bold;
@@ -46,7 +43,7 @@ body {
     padding: 100px;
 }
 
-/* grid-area: row-start / column-start / row-end / column-end; */
+/* filaI / colI / filaF / colF */
 .card0 {
     grid-area: 1 / 1 / 4 / 2;
     padding: 20px;

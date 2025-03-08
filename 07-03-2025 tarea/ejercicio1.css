@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color:#000092;
+}
+
+body{    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);*/
+    margin-top: 20vh;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.circle{
+    margin: 5px;
+    background-color: #000092;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}

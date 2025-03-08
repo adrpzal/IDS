@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color:#ffffff;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;  
+    width: 100%;  
+    border: solid 1px gray;
+}
+
+aside{
+    /* background-color: red;     */
+    width: 30%;
+    overflow: hidden;
+    align-items: center;
+    padding: 5px;
+    
+}
+
+aside img{
+    align-self: center;
+    justify-self: center;
+    width: 700px;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: start;    
+    width: 70%;
+    padding: 3% 5%;
+    /* background-color: black; */
+    overflow: scroll;
+
+}
+
+#intro{   
+   font-weight: bold;
+   font-size: 25px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#post{
+   margin-top: 40px;
+   text-align: justify;
+}
+
+#author{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-top: 30px;
+    
+}
+
+.info{
+    margin-left: 20px;
+    text-align: start;
+    width: 80%;
+}
+
+
+
+#author img{
+    background-color: beige;
+    border-radius: 50%;
+}
