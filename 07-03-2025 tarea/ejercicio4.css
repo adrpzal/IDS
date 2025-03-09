@@ -13,8 +13,8 @@ body{
 }
 
 main{    
-    width: 20%;
-    height: 90%;
+    width: 40%;
+    height: 80%;
     border: solid 2px black;
     border-radius: 20px;
     background-color:#00316d;
@@ -22,6 +22,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-items: center;
+    justify-content: space-around;
     padding: 2%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
