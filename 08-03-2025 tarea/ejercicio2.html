@@ -39,16 +39,18 @@
             <p>***</p>
         </section>
         <section id="boardfilters">
-            <input type="text" >
+            <input type="text" id="inputFilter">
             <select name="filters" id="select">
                 <option value="filters" selected>Quick filters</option>
             </select>
         </section>
+        <!-- espacio dashboard -->
         <section id="board">
+            <!-- columna 1 -->
             <div id="todo">
                 <h6>TO DO <span id="todocount">0</span></h6>
-                <article class="card" draggable="true">
-                    <p>Engage Jupiter Express fon outer solar system travel</p>
+                <article class="card" id="card1" draggable="true">
+                    <p class="task">Engage Jupiter Express fon outer solar system travel</p>
                     <p class="yellow highlight">space travel partners</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -56,8 +58,8 @@
                         <p class="tis">T15-25</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Create 90 day plans for all departments in the Mars Office</p>
+                <article class="card" id="card2" draggable="true">
+                    <p class="task">Create 90 day plans for all departments in the Mars Office</p>
                     <p class="orange highlight">Local Mars Office</p>
                     <div class="points">
                         <img src="images/forbidden.png" alt="">
@@ -65,8 +67,8 @@
                         <p class="tis">T15-25</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Engage Saturn's Rings Resort as a preferred provider</p>
+                <article class="card" id="card3" draggable="true">
+                    <p class="task">Engage Saturn's Rings Resort as a preferred provider</p>
                     <p class="orange highlight">space travel partners</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -75,10 +77,11 @@
                     </div>
                 </article>
             </div>
+            <!-- columna 2 -->
             <div id="inprogress">
                 <h6>IN PROGRESS <span id="inprogcount">0</span></h6>
-                <article class="card" draggable="true">
-                    <p>Requesting available flights is now taking > 5 seconds</p>
+                <article class="card" id="card4" draggable="true">
+                    <p class="task">Requesting available flights is now taking > 5 seconds</p>
                     <p class="aqua highlight">See SpaceEZ Plus</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -86,8 +89,8 @@
                         <p class="tis">T15-18</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Engage Saturn Shuttle Lines for group tours</p>
+                <article class="card" id="card5" draggable="true">
+                    <p class="task">Engage Saturn Shuttle Lines for group tours</p>
                     <p class="yellow highlight">Space Travel Partners</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -95,8 +98,8 @@
                         <p class="tis">T15-15</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Establish a catering vendor to provide meal service</p>
+                <article class="card" id="card6" draggable="true">
+                    <p class="task">Establish a catering vendor to provide meal service</p>
                     <p class="orange highlight">Local Mars Office</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -105,10 +108,11 @@
                     </div>
                 </article>                
             </div>
+            <!-- columna 3 -->
             <div id="codereview">
                 <h6>CODE REVIEW <span id="codrevcount">0</span></h6>
-                <article class="card" draggable="true">
-                    <p>Register with the Mars Ministry of Revenue</p>
+                <article class="card" id="card7" draggable="true">
+                    <p class="task">Register with the Mars Ministry of Revenue</p>
                     <p class="orange highlight">Local Mars Office</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -116,8 +120,8 @@
                         <p class="tis">T15-11</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Draft network plan for Mars Office</p>
+                <article class="card" id="card8" draggable="true">
+                    <p class="task">Draft network plan for Mars Office</p>
                     <p class="orange highlight">Local Mars Office</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -126,10 +130,11 @@
                     </div>
                 </article>
             </div>
+            <!-- columna 4 -->
             <div id="done">
-                <h6>DONE <span id="dondecount">0</span></h6>
-                <article class="card" draggable="true">
-                    <p>Homepage footer uses an inline style-should use a class</p>
+                <h6>DONE <span id="donecount">0</span></h6>
+                <article class="card" id="card9" draggable="true">
+                    <p class="task">Homepage footer uses an inline style-should use a class</p>
                     <p class="purple highlight">Large Team Support</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -137,8 +142,8 @@
                         <p class="tis">T15-68</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Engage JetShuttle SpaceWays for travel</p>
+                <article class="card" id="card10" draggable="true">
+                    <p class="task">Engage JetShuttle SpaceWays for travel</p>
                     <p class="yellow highlight">Space Travel Partners</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -146,8 +151,8 @@
                         <p class="tis">T15-23</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Engage Saturn Shuttle Lines for group tours</p>
+                <article class="card" id="card11" draggable="true">
+                    <p class="task">Engage Saturn Shuttle Lines for group tours</p>
                     <p class="yellow highlight">Space Travel Partners</p>
                     <div class="points">
                         <img src="images/uparrow.png" alt="">
@@ -155,8 +160,8 @@
                         <p class="tis">T15-15</p>
                     </div>
                 </article>
-                <article class="card" draggable="true">
-                    <p>Establish a catering vendor to provide meal selfish</p>
+                <article class="card" id="card12" draggable="true">
+                    <p class="task">Establish a catering vendor to provide meal selfish</p>
                     <p class="orange highlight">Space Travel Partners</p>
                     <div class="points">
                         <img src="images/forbidden.png" alt="">

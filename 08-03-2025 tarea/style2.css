@@ -92,7 +92,7 @@ main{
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
-    padding: 3%;
+    padding: 3%;    
 }
 
 #boardhead{
@@ -107,10 +107,6 @@ main{
     font-size: 2rem;
     width: 85%;
     /* background-color: red; */
-}
-
-#boardhead p{
-    
 }
 
 .release{
@@ -145,30 +141,40 @@ select{
     color: #01112a;
 }
 
-
-
-
-
+/* contenedor de dashboard */
 #board{
     margin-top: 3vh;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
+/* columna1 */
 #todo{
+    grid-column: 1 / 2;
     background-color: #e6e3e3;
     padding: 5px;
 }
+
+/* columna2 */
 #inprogress{
+    grid-column: 2 / 3;
     background-color: #e6e3e3;
     padding: 5px;
 }
+
+/* columna3 */
 #codereview{
+    grid-column: 3 / 4;
     background-color: #e6e3e3;
     padding: 5px;
 }
+
+/* columna4 */
 #done{
+    grid-column: 4 / 5;
     background-color: #e6e3e3;
     padding: 5px;
 }
@@ -179,13 +185,13 @@ h6{
     margin-left: 2px;
 }
 
+/* estilo de tarjetas del dashboard */
 .card{
     font-size: 0.85rem;
     background-color:whitesmoke;
     padding: 7%;
     margin-top: 7px; 
     cursor: grab;   
-    /* position: absolute; */
 }
 
 .highlight{

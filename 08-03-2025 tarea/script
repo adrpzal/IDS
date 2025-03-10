@@ -1,0 +1,87 @@
+const columns = document.querySelectorAll('div');
+
+// Función para agregar eventos a las tarjetas
+function addDragEventListeners(card) {
+    card.addEventListener('dragstart', function (e) {
+        // Guardamos el ID de la tarjeta (deberíamos tener un identificador único para cada tarjeta)
+        const cardData = {
+            cardId: card.id, // Usamos el ID de la tarjeta para identificarla
+            columnId: card.parentNode.id // Guardamos la columna de la tarjeta original
+        };
+
+        // Almacenamos el ID de la tarjeta en el evento de arrastre
+        e.dataTransfer.setData('application/json', JSON.stringify(cardData));
+
+        // Añadimos clase para estilo (opcional)
+        card.classList.add('dragging');
+    });
+
+    card.addEventListener('dragend', function (e) {
+        // Quitamos la clase de estilo al terminar el arrastre
+        card.classList.remove('dragging');
+    });
+}
+
+// Inicializamos los eventos de las tarjetas existentes
+document.querySelectorAll('.card').forEach(function (card) {
+    addDragEventListeners(card);
+});
+
+// Para cada columna, gestionamos los eventos de `dragover` y `drop`
+columns.forEach(function (column) {
+    column.addEventListener('dragover', function (e) {
+        e.preventDefault(); // Necesario para permitir el "drop"
+    });
+
+    column.addEventListener('drop', function (e) {
+        e.preventDefault();
+
+        // Recuperamos los datos de la tarjeta que estamos arrastrando
+        const cardData = JSON.parse(e.dataTransfer.getData('application/json'));
+
+        // Buscamos la tarjeta usando su ID
+        const card = document.getElementById(cardData.cardId);
+
+        // Verificamos que la tarjeta sea válida
+        if (card && card instanceof Node) {
+            // Verificamos si la tarjeta ya está en la columna de destino
+            if (card.parentNode !== column) {
+                // Mueve la tarjeta al final de la columna de destino
+                column.appendChild(card);
+                reCount();
+            }
+
+            // Aseguramos que la tarjeta movida aún pueda ser arrastrada
+            addDragEventListeners(card);
+        } else {
+            console.error("La tarjeta no es válida o no se pudo encontrar:", card);
+        }
+    });
+});
+
+function reCount() {
+    let cardsCount = 0;
+    
+    let todoDiv = document.getElementById("todo");
+    cardsCount = todoDiv.getElementsByClassName("card").length;
+    let toDosTxt = document.getElementById("todocount");
+    toDosTxt.textContent = cardsCount;
+
+    let inprogressDiv = document.getElementById("inprogress")
+    cardsCount = inprogressDiv.getElementsByClassName("card").length;
+    let inProgressTxt = document.getElementById("inprogcount");
+    inProgressTxt.textContent = cardsCount;
+
+    let coderevDiv = document.getElementById("codereview")
+    cardsCount = coderevDiv.getElementsByClassName("card").length;
+    let codeReviewTxt = document.getElementById("codrevcount");
+    codeReviewTxt.textContent = cardsCount;
+
+    let donesDiv = document.getElementById("done");
+    cardsCount = donesDiv.getElementsByClassName("card").length;
+    let doneTxt = document.getElementById("donecount");
+    doneTxt.textContent = cardsCount;     
+}
+
+// document.addEventListener("load", function () {reCount()})
+window.addEventListener("load", function () {reCount()})
