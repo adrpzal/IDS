@@ -3,10 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
-    <title>Ejercicio1</title>
+    <link rel="stylesheet" href="style2.css">
+    <title>Ejercicio2</title>
 </head>
 <body>
-    
+    <header>
+        <img src="images/menu.png">
+        <img src="images/srch.svg">
+        <img src="images/plus.png" >
+    </header>
+    <nav>        
+        <div id="navtitle">
+            <img src="images/faceit.svg">
+            <div>
+                <p>Teams in space</p>
+                <span>Software project</span>
+            </div>
+        </div>
+        <ul>
+            <li><img src="images/3.png" alt="icono"><span>Backlog</span></li>
+            <li><img src="images/2.png" alt="icono"><span>Board</span></li>
+            <li><img src="images/5.png" alt="icono"><span>Reports</span></li>
+            <li><img src="images/4.png" alt="icono"><span>Releases</span></li>
+            <li><img src="images/6.png" alt="icono"><span>Components</span></li>
+            <li><img src="images/5.png" alt="icono"><span>Issues</span></li>
+            <li><img src="images/9.png" alt="icono"><span>Repository</span></li>
+            <li><img src="images/8.png" alt="icono"><span>Add item</span></li>
+            <li><img src="images/1.png" alt="icono"><span>Settings</span></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="boardhead">
+            <h2>Board</h2>
+            <p class="release">Release</p>
+            <p>***</p>
+        </section>
+        <section id="boardfilters">
+            <input type="text" >
+            <select name="filters" id="select">
+                <option value="filters" selected>Quick filters</option>
+            </select>
+        </section>
+        <section id="board">
+            <div id="todo">
+                <h6>TO DO <span id="todocount">0</span></h6>
+                <article class="card" draggable="true">
+                    <p>Engage Jupiter Express fon outer solar system travel</p>
+                    <p class="yellow highlight">space travel partners</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">5</p>
+                        <p class="tis">T15-25</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Create 90 day plans for all departments in the Mars Office</p>
+                    <p class="orange highlight">Local Mars Office</p>
+                    <div class="points">
+                        <img src="images/forbidden.png" alt="">
+                        <p class="count">9</p>
+                        <p class="tis">T15-25</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Engage Saturn's Rings Resort as a preferred provider</p>
+                    <p class="orange highlight">space travel partners</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">3</p>
+                        <p class="tis">T15-17</p>
+                    </div>
+                </article>
+            </div>
+            <div id="inprogress">
+                <h6>IN PROGRESS <span id="inprogcount">0</span></h6>
+                <article class="card" draggable="true">
+                    <p>Requesting available flights is now taking > 5 seconds</p>
+                    <p class="aqua highlight">See SpaceEZ Plus</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">3</p>
+                        <p class="tis">T15-18</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Engage Saturn Shuttle Lines for group tours</p>
+                    <p class="yellow highlight">Space Travel Partners</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">4</p>
+                        <p class="tis">T15-15</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Establish a catering vendor to provide meal service</p>
+                    <p class="orange highlight">Local Mars Office</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">4</p>
+                        <p class="tis">T15-15</p>
+                    </div>
+                </article>                
+            </div>
+            <div id="codereview">
+                <h6>CODE REVIEW <span id="codrevcount">0</span></h6>
+                <article class="card" draggable="true">
+                    <p>Register with the Mars Ministry of Revenue</p>
+                    <p class="orange highlight">Local Mars Office</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">3</p>
+                        <p class="tis">T15-11</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Draft network plan for Mars Office</p>
+                    <p class="orange highlight">Local Mars Office</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">3</p>
+                        <p class="tis">T15-25</p>
+                    </div>
+                </article>
+            </div>
+            <div id="done">
+                <h6>DONE <span id="dondecount">0</span></h6>
+                <article class="card" draggable="true">
+                    <p>Homepage footer uses an inline style-should use a class</p>
+                    <p class="purple highlight">Large Team Support</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count"></p>
+                        <p class="tis">T15-68</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Engage JetShuttle SpaceWays for travel</p>
+                    <p class="yellow highlight">Space Travel Partners</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count">5</p>
+                        <p class="tis">T15-23</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Engage Saturn Shuttle Lines for group tours</p>
+                    <p class="yellow highlight">Space Travel Partners</p>
+                    <div class="points">
+                        <img src="images/uparrow.png" alt="">
+                        <p class="count"></p>
+                        <p class="tis">T15-15</p>
+                    </div>
+                </article>
+                <article class="card" draggable="true">
+                    <p>Establish a catering vendor to provide meal selfish</p>
+                    <p class="orange highlight">Space Travel Partners</p>
+                    <div class="points">
+                        <img src="images/forbidden.png" alt="">
+                        <p class="count">1</p>
+                        <p class="tis">T15-5</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 </body>
+<script src="script.js"></script>
 </html>
