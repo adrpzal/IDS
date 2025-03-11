@@ -3,8 +3,8 @@
 let cards = document.querySelectorAll('.card');
 cards.forEach(function (card) {
     card.addEventListener('dragstart', function (e) {       
-        // guardamos id y columna
-        const cardData = {cardId: card.id, columnId: card.parentNode.id};
+        // guardamos id de card
+        const cardData = {cardId: card.id};
 
         // guardamos datos de tarjeta en el evento de arrastre
         e.dataTransfer.setData('application/json', JSON.stringify(cardData));  
