@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicios</title>
+
+</head>
+<body>
+    <h1>EJERCICIOS</h1>
+    <div class="container">
+        <ol class="ejercicios2">
+            <li onclick="ejercicio1()">Sistema de inventario de una tienda</li>
+            <li onclick="ejercicio2()">Lista de estudiantes y promedios</li>
+            <li onclick="ejercicio3()">Gestion de citas medicas</li>
+            <li onclick="ejercicio4()">Filtrar peliculas por genero</li>
+            <li onclick="ejercicio5()">Sistema de bilioteca</li>
+            <li onclick="ejercicio6()">Registro de empleados y sueldos</li>
+            <li onclick="ejercicio7()">Tienda en linea - buscar productos por nombre</li>
+            <li onclick="ejercicio8()">Gestion de usuarios en una plataforma</li>
+            <li onclick="ejercicio9()">Analisis de ventas en un restaurante</li>
+            <li onclick="ejercicio10()">Registro de asistencai en una clase</li>
+        </ol>
+        <div class="ejercicio">
+            <div id="ejercicio3">
+                <div class="toHide" id="inputsej3">
+                    <label for="nombre">Paciente</label> 
+                    <input type="text" id="paciente">
+                    <select name="doctors" id="doctors">
+                        <option value="doctor1">Doctor1</option>
+                        <option value="doctor2">Doctor2</option>
+                        <option value="doctor3">Doctor3</option>
+                        <option value="doctor4">Doctor4</option>
+                    </select>
+                    <input type="date" name="fechaconsulta" id="fechaconsulta">
+                    <input type="button" name="addCita" id="addCita" value="agregar cita">
+                </div>
+                <table id="tablacitas">
+                    <th>
+                        <td id="tddoctor">Doctor</td>
+                        <td id="tdfecha">Fecha</td>
+                        <td id="tdpaciente">Paciente</td>
+                    </th>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="app2.js" ></script>
+</html>
+
+

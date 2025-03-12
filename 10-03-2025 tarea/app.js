@@ -90,9 +90,7 @@ function ej10() {
     let numero = Number(window.prompt("Ingresa numero a evaluar:", 0));
     let esprimo = true;
 
-    if ((numero < 2) || (numero > 2 && numero % 2 === 0) ) {
-        esprimo = false;
-    }
+    if ((numero < 2) || (numero > 2 && numero % 2 === 0) ) {esprimo = false}
     if (numero === 2 || numero === 3) {esprimo = true}
 
     console.log(`El numero ${numero} ${esprimo ? "sì": "no"} es primo`);
