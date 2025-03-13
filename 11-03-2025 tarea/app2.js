@@ -18,9 +18,7 @@ function ejercicio1() {
     let disponibles = [];
 
     productos.forEach(function (producto) {
-        if (producto.stock !== 0) {
-            disponibles.push(producto)        
-        }
+        if (producto.stock !== 0) {disponibles.push(producto)}
     })
         
     console.log(`La lista de productos disponibles es: ${disponibles.length}`);
@@ -97,6 +95,7 @@ function ejercicio3() {
     function showCItas() {
         let tabla = document.getElementById('tablacitas');
         tabla.innerHTML = '';
+        
 
         citas.forEach(function (cita) {
             let fila = document.createElement('tr');
@@ -319,8 +318,8 @@ function ejercicio10() {
 
 
 function showEjercicio(exercise) {
-    let ejercicios = document.querySelectorAll('.toHide');
-    ejercicios.forEach( ejercicio => ejercicio.style.display = "none");
+    // let ejercicios = document.querySelectorAll('.toHide');
+    // ejercicios.forEach( ejercicio => ejercicio.style.display = "none");
 
     let divEjercicio = document.getElementById(exercise);
     divEjercicio.style.display = "flex";

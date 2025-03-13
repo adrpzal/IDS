@@ -54,6 +54,7 @@ li:hover{
 }
 
 #ejercicio3{
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -64,10 +65,16 @@ li:hover{
     margin-top: 10px;
 }
 
-td{
-    padding: 5px;   
+
+table{
+    border-collapse: collapse;
 }
 
-tr{
+td{
+    padding: 5px;   
     border: solid 1px;
 }
+
+/* tr{
+    border: solid 1px;
+} */
