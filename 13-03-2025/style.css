@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    margin-top: 10px;
+    position: sticky;
+    top: 5px;
+    background-color: white;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+table{
+    margin-top: 10px;
+    border: solid 1px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td{
+    padding: 4px;
+    border: solid 1px;
+}
+
+tr:hover{
+    background-color: rgb(157, 157, 157);
+    
+}
+
+.headtable{
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+    height: 40px;
+    position: sticky;
+    top: 40px;
+}
+
+#cuerpotabla{
+    height: 20%;
+
+}
