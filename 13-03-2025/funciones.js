@@ -1,3 +1,24 @@
+// OPERADORES LOGICOS
+// true && false = false    !!'asdas' & false -- true && false = false
+// false && false = false   !!'asdas' && false -- false && false = false
+// false && true = false    !'asdasa' && -1 -- false && true = false
+// true && true = true      !!'asasa' && !!'asas'
+
+// true && true 
+// console.log(!![] && !![] )
+
+// let arreglo = [ !![], ![]]
+// let reducido = arreglo.reduce((contador, valor) => contador && valor)
+// console.log(reducido)
+
+// console.log('ejemplo 5')
+// console.log(10 && 'juan')
+
+// console.log('ejemplo 6')
+// console.log(0 && true)
+
+
+
 let persona = {nombre: 'adrian',edad: 25, sexo: 'M'}
 /**
  * Metodo para mover el cuerpo de una persona

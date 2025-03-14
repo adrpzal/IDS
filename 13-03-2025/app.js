@@ -1,22 +1,5 @@
 let tabla = document.getElementById('cuerpotabla')
 // OPERADORES LOGICOS
-// true && false = false    !!'asdas' & false -- true && false = false
-// false && false = false   !!'asdas' && false -- false && false = false
-// false && true = false    !'asdasa' && -1 -- false && true = false
-// true && true = true      !!'asasa' && !!'asas'
-
-// true && true 
-// console.log(!![] && !![] )
-
-// let arreglo = [ !![], ![]]
-// let reducido = arreglo.reduce((contador, valor) => contador && valor)
-// console.log(reducido)
-
-// console.log('ejemplo 5')
-// console.log(10 && 'juan')
-
-// console.log('ejemplo 6')
-// console.log(0 && true)
 
 
 // true || false = true    !!'asdas' || false -- true || false = false
@@ -37,6 +20,12 @@ setOperation(valsfalse,valsfalse,'FF')
 setOperation(valsfalse,valstrue,'FT')
 setOperation(valstrue,valstrue,'TT')
 
+/**
+ * 
+ * @param {*} termino1 
+ * @param {*} termino2 
+ * @param {*} inicial 
+ */
 function setOperation(termino1,termino2,inicial) {
     for (let i = 0; i < termino1.length; i++) {
 
@@ -187,6 +176,7 @@ function setOperation(termino1,termino2,inicial) {
 //         resNp:resCompp[2]
 //     }) 
 // }
+
 showOperations(resultados, 'AND');
 showOperations(resultados, 'OR');
 showOperations(resultados, 'NOT');
@@ -194,7 +184,12 @@ showOperations(resultados, 'NOT');
 // console.log(`los items son: ${resultados.entries()}`)
 // resultados.forEach(operacion => console.log(operacion))
 
-
+/**
+ * 
+ * @param {*} val1 
+ * @param {*} val2 
+ * @returns 
+ */
 function compara(val1,val2){
     let rAnd = val1 && val2;
     let rOr = val1 || val2;
@@ -206,7 +201,11 @@ function compara(val1,val2){
     return arreglo
 }
 
-
+/**
+ * 
+ * @param {*} listado 
+ * @param {*} operador 
+ */
 function showOperations(listado,operador) {
     let counter = 1;
     listado.forEach(function (datosfila) {
@@ -238,6 +237,7 @@ function showOperations(listado,operador) {
             fila.appendChild(colOperador)
             fila.appendChild(colTer2)
             fila.appendChild(colRes)
+            fila.style.hover
         
             tabla.appendChild(fila);
             counter++;
@@ -246,11 +246,11 @@ function showOperations(listado,operador) {
     colorCells();
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 
 
 // const valores = [ 1, '1', 0, '0', -5, '-5', [], {}, 100, null, undefined, 'palabra', null, [{}], [], undefined, '']
@@ -318,15 +318,16 @@ function showOperations(listado,operador) {
 function colorCells() {
     let celdas = document.querySelectorAll("td");
     celdas.forEach(function (celda) {
+        
         let contenido = celda.textContent.split(" ")
-        let estrue = contenido.forEach(palabra => {
+        contenido.forEach(palabra => {
             if (palabra === "(true)" ) {
-                celda.style.backgroundColor ="#5d9a5d"                 
-                celda.style.color ="black"                 
+                celda.style.backgroundColor ="#5d9a5d";
+                celda.style.color ="black";
             }
             if (palabra === "(false)" ) {
-                celda.style.backgroundColor ="#ce5f5b" 
-                celda.style.color ="black"                 
+                celda.style.backgroundColor ="#ce5f5b";
+                celda.style.color ="black";
             }
         });
     })
