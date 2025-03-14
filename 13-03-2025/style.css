@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 h1{
@@ -32,12 +33,13 @@ table{
 }
 
 td{
-    padding: 4px;
+    padding: 8px;
     border: solid 1px;
 }
 
 tr:hover{
-    background-color: rgb(157, 157, 157);
+    background-color: rgb(146, 146, 146);
+    color: rgb(0, 0, 0);
     
 }
 
@@ -52,5 +54,4 @@ tr:hover{
 
 #cuerpotabla{
     height: 20%;
-
 }
