@@ -8,15 +8,667 @@
 </head>
 <body>
     <main>
-        <table id="tablaarray">
-            <th>
-                <td>#</td>
-                <td>Prototipo</td>
-                <td>Declaracion</td>
-                <td>Ejemplo</td>
-            </th>
-            <tbody id="cuerpotabla"></tbody>
-        </table>
+        <h1>PROTOTIPOS DEL OBJETO ARRAY</h1>
+        <article>
+            <table id="tablaarray">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>MÉTODO</th>
+                        <th>SINTAXIS</th>
+                        <th>EJEMPLO</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpotabla">
+                    <tr>
+                        <td>1</td>
+                        <td>Array.from</td>
+                        <td>Array.from(arrayLike[, mapFn[, thisArg]])</td>
+                        <td>
+                            console.log(Array.from([1, 2, 3], (x) => x + x));
+                            <br><p class="comment">// Salida: Array [2, 4, 6]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Array.fromAsync()</td>
+                        <td>
+                            <p>Array.fromAsync(arrayLike)</p>
+                            <p>Array.fromAsync(arrayLike, mapFn)</p>
+                            <p>Array.fromAsync(arrayLike, mapFn, thisArg)</p>
+                        </td>
+                        <td>
+                            Array.fromAsync(new Map([[1, 2],[3, 4],]),).then((array) => console.log(array)); // [[1, 2], [3, 4]]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Array.isArray()</td>
+                        <td>
+                            <p>Array.isArray(value)</p>
+                        </td>
+                        <td>
+                            console.log(Array.isArray([1, 3, 5]));
+                            <br><p class="comment">// Salida: true</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Array.of()</td>
+                        <td>
+                            <p>Array.of()</p>
+                            <p>Array.of(element1)</p>
+                            <p>Array.of(element1, element2)</p>
+                            <p>Array.of(element1, element2, /* …, */ elementN)</p>    
+                        </td>
+                        <td>
+                            console.log(Array.of("foo", 2, "bar", true));
+                            <br><p class="comment">// Salida: Array ["foo", 2, "bar", true]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Array[Symbol.species]</td>
+                        <td>
+                            <p>Array[Symbol.species]</p>
+                        </td>
+                        <td>
+                            class MyArray extends Array {
+                                static get [Symbol.species]() {return Array}
+                              }                          
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Array.at()</td>
+                        <td>
+                            <p>at(índice);</p>
+                        </td>
+                        <td>
+                            const carrito = ["manzana", "plátano", "pera"];
+                            function devolverUltimo(arr) {return arr.at(-1)}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Array.concat()</td>
+                        <td>
+                            <p>var nuevo_array = viejo_array.concat(valor1[, valor2[, ...[, valorN]]])</p>
+                        </td>
+                        <td>
+                            const array1 = ["a", "b", "c"];
+                            const array2 = ["d", "e", "f"];
+                            const array3 = array1.concat(array2);                        
+                            console.log(array3);
+                            <br><p class="comment">// Salida: Array ["a", "b", "c", "d", "e", "f"]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Array.copyWithin()</td>
+                        <td>
+                            <p>arr.copyWithin(target)</p>
+                            <p>arr.copyWithin(target, start)</p>
+                            <p>arr.copyWithin(target, start, end)</p>
+                        </td>
+                        <td>
+                            const array1 = ["a", "b", "c", "d", "e"];
+                            console.log(array1.copyWithin(0, 3, 4));
+                            <br><p class="comment">// Salida: Array ["d", "b", "c", "d", "e"]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Array.entries()</td>
+                        <td>
+                            <p>arr.entries()</p>
+                        </td>
+                        <td>
+                            const array1 = ["a", "b", "c"];
+                            const iterator1 = array1.entries();                        
+                            console.log(iterator1.next().value);
+                            <br><p class="comment">// Salida: Array [0, "a"]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Array.every()</td>
+                        <td>
+                            <p>every(callbackFn)</p>                        
+                            <p>every(callbackFn, thisArg)</p>
+    
+                        </td>
+                        <td>
+                            const isBelowThreshold = (currentValue) => currentValue < 40;
+                            const array1 = [1, 30, 39, 29, 10, 13];                        
+                            console.log(array1.every(isBelowThreshold));
+                            <br><p class="comment">// Salida: true</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Array.fill()</td>
+                        <td>
+                            <p>arr.fill(value[, start = 0[, end = this.length]])</p>
+                        </td>
+                        <td>
+                            const array1 = [1, 2, 3, 4];
+                            console.log(array1.fill(0, 2, 4));
+                            <br><p class="comment">// Salida: Array [1, 2, 0, 0]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Array.filter()</td>
+                        <td>
+                            <p>var newArray = arr.filter(callback(currentValue[, index[, array]])[, thisArg])</p>
+                        </td>
+                        <td>
+                            const words = ["spray", "elite", "exuberant", "destruction", "present"];
+                            const result = words.filter((word) => word.length > 6);                        
+                            console.log(result);
+                            <br><p class="comment">// Salida: Array ["exuberant", "destruction", "present"]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Array.find()</td>
+                        <td>
+                            <p>arr.find(callback(element[, index[, array]])[, thisArg])</p>
+                        </td>
+                        <td>
+                            const array1 = [5, 12, 8, 130, 44];
+                            const found = array1.find((element) => element > 10);                        
+                            console.log(found);
+                            <br><p class="comment">// Salida: 12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Array.findIndex()</td>
+                        <td>
+                            <p>arr.findIndex(callback( element[, index[, array]] )[, thisArg])</p>
+                        </td>
+                        <td>
+                            const array1 = [5, 12, 8, 130, 44];
+                            const isLargeNumber = (element) => element > 13;                        
+                            console.log(array1.findIndex(isLargeNumber));
+                            <br><p class="comment">// Salida: 3</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Array.findLast()</td>
+                        <td>
+                            <p>findLast(callbackFn)</p>
+                            <p>findLast(callbackFn, thisArg)</p>                            
+                        </td>
+                        <td>
+                            const array1 = [5, 12, 50, 130, 44];
+                            const found = array1.findLast((element) => element > 45);                        
+                            console.log(found);
+                            <br><p class="comment">// Salida: 130</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Array.findLastIndex()</td>
+                        <td>
+                            <p>findLastIndex(callbackFn)</p>
+                            <p>findLastIndex(callbackFn, thisArg)</p>                            
+                        </td>
+                        <td>
+                            const array1 = [5, 12, 50, 130, 44];
+                            const isLargeNumber = (element) => element > 45;                        
+                            console.log(array1.findLastIndex(isLargeNumber));
+                            <br><p class="comment">// Salida: 3</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Array.flat()</td>
+                        <td>
+                            <p>flat()</p>
+                            <p>flat(depth)</p>                            
+                        </td>
+                        <td>
+                            const arr1 = [0, 1, 2, [3, 4]];
+                            console.log(arr1.flat());
+                            // Salida: Array [0, 1, 2, 3, 4]                        
+                            const arr2 = [0, 1, [2, [3, [4, 5]]]];                        
+                            console.log(arr2.flat());
+                            <br><p class="comment">// Salida: Array [0, 1, 2, Array [3, Array [4, 5]]]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Array.flatMap()</td>
+                        <td>
+                            <p>flatMap(callbackFn)</p>
+                            <p>flatMap(callbackFn, thisArg)</p>                            
+                        </td>
+                        <td>
+                            const arr1 = [1, 2, 1];
+                            const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));                        
+                            console.log(result); 
+                            <br><p class="comment">// Salida: Array [1, 2, 2, 1]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Array.forEach()</td>
+                        <td>
+                            <p>forEach(callbackFn)</p>
+                            <p>forEach(callbackFn, thisArg)</p>                            
+                        </td>
+                        <td>
+                            const array1 = ["a", "b", "c"];
+                            array1.forEach((element) => console.log(element));                        
+                            <br><p class="comment">// Salida: "a"</p>
+                            <br><p class="comment">// Salida: "b"</p>
+                            <br><p class="comment">// Salida: "c"</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Array.includes()</td>
+                        <td>
+                            <p>includes(searchElement)</p>
+                            <p>includes(searchElement, fromIndex)</p>                            
+                        </td>
+                        <td>
+                            const array1 = [1, 2, 3];
+                            console.log(array1.includes(2));
+                            <br><p class="comment">// Salida: true</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Array.indexOf()</td>
+                        <td>
+                            <p>indexOf(searchElement)</p>
+                            <p>indexOf(searchElement, fromIndex)</p>                            
+                        </td>
+                        <td>
+                            const beasts = ["ant", "bison", "camel", "duck", "bison"];
+                            console.log(beasts.indexOf("bison"));
+                            <br><p class="comment">// Salida: 1</p>
+                            console.log(beasts.indexOf("bison", 2));
+                            <br><p class="comment">// Salida: 4</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Array.join()</td>
+                        <td>
+                            <p>join()</p>
+                            <p>join(separator)</p>                            
+                        </td>
+                        <td>
+                            const matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9],];
+                            console.log(matrix.join()); 
+                            <br><p class="comment">// 1,2,3,4,5,6,7,8,9</p>
+                            console.log(matrix.join(";")); 
+                            <br><p class="comment">// 1,2,3;4,5,6;7,8,9</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Array.keys()</td>
+                        <td>
+                            <p>keys()</p>                        
+                        </td>
+                        <td>
+                            const array1 = ["a", "b", "c"];
+                            const iterator = array1.keys();                        
+                            for (const key of iterator) {console.log(key)}                        
+                            <br><p class="comment">// Salida: 0</p>
+                            <br><p class="comment">// Salida: 1</p>
+                            <br><p class="comment">// Salida: 2</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Array.lastIndexOf()</td>
+                        <td>
+                            <p>lastIndexOf(searchElement)</p>                        
+                            <p>lastIndexOf(searchElement, fromIndex)</p>                        
+                        </td>
+                        <td>
+                            const animals = ["Dodo", "Tiger", "Penguin", "Dodo"];
+                            console.log(animals.lastIndexOf("Dodo"));  
+                            <br><p class="comment">// Salida: 3</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Array.map()</td>
+                        <td>
+                            <p>map(callbackFn)</p>                        
+                            <p>map(callbackFn, thisArg)</p>                        
+                        </td>
+                        <td>
+                            const numbers = [1, 4, 9];
+                            const roots = numbers.map((num) => Math.sqrt(num));                        
+                            <br><p class="comment">// [1, 2, 3]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>Array.pop()</td>
+                        <td>
+                            <p>pop()</p>              
+                        </td>
+                        <td>
+                            const myFish = ["angel", "clown", "mandarin", "sturgeon"];
+                            const popped = myFish.pop();
+                            console.log(myFish); 
+                            <br><p class="comment">// ['angel', 'clown', 'mandarin' ]</p>
+                            console.log(popped); 
+                            <br><p class="comment">// 'sturgeon'</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Array.push()</td>
+                        <td>
+                            <p>push()</p>              
+                            <p>push(element1)</p>              
+                            <p>push(element1, element2)</p>              
+                            <p>push(element1, element2, /* …, */ elementN)</p>              
+                        </td>
+                        <td>
+                            const sports = ["soccer", "baseball"];
+                            const total = sports.push("football", "swimming");                        
+                            console.log(sports); 
+                            <br><p class="comment">// ['soccer', 'baseball', 'football', 'swimming']</p>                
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>Array.reduce()</td>
+                        <td>
+                            <p>reduce(callbackFn)</p>              
+                            <p>reduce(callbackFn, initialValue)</p>       
+                        </td>
+                        <td>
+                            const array1 = [1, 2, 3, 4];
+                            const initialValue = 0;
+                            const sumWithInitial = array1.reduce(
+                              (accumulator, currentValue) => accumulator + currentValue,
+                              initialValue,
+                            );                        
+                            console.log(sumWithInitial);
+                            <br><p class="comment">// Salida: 10</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>Array.reduceRight()</td>
+                        <td>
+                            <p>reduceRight(callbackFn)</p>              
+                            <p>reduceRight(callbackFn, initialValue)</p>       
+                        </td>
+                        <td>
+                            const array1 = [[0, 1],[2, 3],[4, 5]];
+                            const result = array1.reduceRight((accumulator, currentValue) =>
+                            accumulator.concat(currentValue),
+                          );                      
+                          console.log(result); 
+                          <br><p class="comment">// Salida: Array [4, 5, 2, 3, 0, 1]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>Array.reverse()</td>
+                        <td>
+                            <p>reverse()</p>
+                        </td>
+                        <td>
+                            const items = [1, 2, 3];
+                            console.log(items); 
+                            <br><p class="comment">// [1, 2, 3]</p>                            
+                            items.reverse();
+                            console.log(items); 
+                            <br><p class="comment">// [3, 2, 1]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>Array.shift()</td>
+                        <td>
+                            <p>shift()</p>
+                        </td>
+                        <td>
+                            const myFish = ["angel", "clown", "mandarin", "surgeon"];                            
+                            const shifted = myFish.shift();                        
+                            console.log("myFish after:", myFish);
+                            <br><p class="comment">// resultado: ['clown', 'mandarin', 'surgeon']</p>
+                                                  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>Array.slice()</td>
+                        <td>
+                            <p>slice()</p>
+                            <p>slice(start)</p>
+                            <p>slice(start, end)</p>
+                        </td>
+                        <td>
+                            const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+                            const citrus = fruits.slice(1, 3);
+                            
+                            <br><p class="comment">// fruits: ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']</p>
+                            <br><p class="comment">// citrus: ['Orange','Lemon']</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>Array.some()</td>
+                        <td>
+                            <p>some(callbackFn)</p>
+                            <p>some(callbackFn, thisArg)</p>
+                        </td>
+                        <td>
+                            function isBiggerThan10(element, index, array) {
+                                return element > 10;
+                              }
+                              
+                              [2, 5, 8, 1, 4].some(isBiggerThan10); 
+                              <br><p class="comment">// false</p>
+                              [12, 5, 8, 1, 4].some(isBiggerThan10); 
+                              <br><p class="comment">// true</p>                          
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>Array.sort()</td>
+                        <td>
+                            <p>sort()</p>
+                            <p>sort(compareFn)</p>
+                        </td>
+                        <td>
+                            const months = ["March", "Jan", "Feb", "Dec"];
+                            months.sort();
+                            console.log(months);
+                            <br><p class="comment">// Salida: Array ["Dec", "Feb", "Jan", "March"]</p>
+                            
+                            const array1 = [1, 30, 4, 21, 100000];
+                            array1.sort();
+                            console.log(array1);
+                            <br><p class="comment">// Salida: Array [1, 100000, 21, 30, 4]</p>                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>Array.splice()</td>
+                        <td>
+                            <p>splice(start)</p>
+                            <p>splice(start, deleteCount)</p>
+                            <p>splice(start, deleteCount, item1)</p>
+                            <p>splice(start, deleteCount, item1, item2, /* …, */ itemN)</p>
+                        </td>
+                        <td>
+                            const months = ["Jan", "March", "April", "June"];
+                            months.splice(1, 0, "Feb");
+                            console.log(months);
+                            <br><p class="comment">// Salida: Array ["Jan", "Feb", "March", "April", "June"]</p>                    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>Array.toLocaleString()</td>
+                        <td>
+                            <p>toLocaleString()</p>
+                            <p>toLocaleString(locales)</p>
+                            <p>toLocaleString(locales, options)</p>
+                        </td>
+                        <td>
+                            const prices = ["￥7", 500, 8123, 12];
+                            prices.toLocaleString("ja-JP", { style: "currency", currency: "JPY" });                        
+                            <br><p class="comment">// "￥7,￥500,￥8,123,￥12"</p>                                         
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>Array.toReversed()</td>
+                        <td>
+                            <p>toReversed()</p>
+                        </td>
+                        <td>
+                            const items = [1, 2, 3];                    
+                            const reversedItems = items.toReversed();
+                            console.log(reversedItems); 
+                            <br><p class="comment">// [3, 2, 1]</p>                    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>Array.toSorted()</td>
+                        <td>
+                            <p>toSorted()</p>
+                            <p>toSorted(compareFn)</p>
+                        </td>
+                        <td>
+                            const months = ["Mar", "Jan", "Feb", "Dec"];
+                            const sortedMonths = months.toSorted();
+                            console.log(sortedMonths); 
+                            <br><p class="comment">// ['Dec', 'Feb', 'Jan', 'Mar']</p>
+                            
+                            const values = [1, 10, 21, 2];
+                            const sortedValues = values.toSorted((a, b) => a - b);
+                            console.log(sortedValues); 
+                            <br><p class="comment">// [1, 2, 10, 21]</p>                                 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>Array.toSpliced()</td>
+                        <td>
+                            <p>toSpliced(start)</p>
+                            <p>toSpliced(start, deleteCount)</p>
+                            <p>toSpliced(start, deleteCount, item1, item2, /* …, */ itemN)</p>
+                        </td>
+                        <td>
+                            const months = ["Mar", "Jan", "Feb", "Dec"];
+                            const months = ["Jan", "Mar", "Apr", "May"];
+    
+                            const months2 = months.toSpliced(1, 0, "Feb");
+                            console.log(months2); 
+                            <br><p class="comment">// ["Jan", "Feb", "Mar", "Apr", "May"]</p>
+                                                       
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td>Array.toString()</td>
+                        <td>
+                            <p>toString()</p>
+                        </td>
+                        <td>
+                            const array1 = [1, 2, "a", "1a"];
+                            console.log(array1.toString()); 
+                            <br><p class="comment">// "1,2,a,1a"</p>                                                 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>39</td>
+                        <td>Array.unshift()</td>
+                        <td>
+                            <p>unshift()</p>
+                            <p>unshift(element1)</p>
+                            <p>unshift(element1, element2, /* …, */ elementN)</p>
+                        </td>
+                        <td>
+                            const array1 = [1, 2, 3];
+                            console.log(array1.unshift(4, 5)); 
+                            <br><p class="comment">// Salida: 5</p>                        
+                            console.log(array1); 
+                            <br><p class="comment">// Salida: Array [4, 5, 1, 2, 3]</p>                                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>Array.values()</td>
+                        <td>
+                            <p>values()</p>
+                        </td>
+                        <td>
+                            const array1 = ["a", "b", "c"];
+                            const iterator = array1.values();                            
+                            for (const value of iterator) {console.log(value)}
+                            
+                            <br><p class="comment">// Salida: "a"</p>
+                            <br><p class="comment">// Salida: "b"</p>
+                            <br><p class="comment">// Salida: "c"</p>                                   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td>Array.with()</td>
+                        <td>
+                            <p>arrayInstance.with(index, value)</p>
+                        </td>
+                        <td>
+                            const arr = [1, 2, 3, 4, 5];
+                            console.log(arr.with(2, 6)); 
+                            <br><p class="comment">// [1, 2, 6, 4, 5]</p>
+                            console.log(arr); 
+                            <br><p class="comment">// [1, 2, 3, 4, 5]</p>                                                       
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td>array[Symbol.iterator]()</td>
+                        <td>
+                            <p>array[Symbol.iterator]()</p>
+                        </td>
+                        <td>
+                            const array1 = ["a", "b", "c"];
+                            const iterator1 = array1[Symbol.iterator]();                            
+                            for (const value of iterator1) {console.log(value)}
+                            
+                            <br><p class="comment">// Salida: "a"</p>
+                            <br><p class="comment">// Salida: "b"</p>
+                            <br><p class="comment">// Salida: "c"</p>                                                    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>43</td>
+                        <td>Array: length</td>
+                        <td>
+                            <p>array.length()</p>
+                        </td>
+                        <td>
+                            const clothing = ["shoes", "shirts", "socks", "sweaters"];
+                            console.log(clothing.length); 
+                            <br><p class="comment">// Salida: 4</p>                                                                        
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
     </main>    
 </body>
 <script src="app.js"></script>
