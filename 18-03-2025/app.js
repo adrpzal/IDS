@@ -79,3 +79,11 @@ const obtenerInfoPokemon = ()=>{
 }
 
 obtenerInfoPokemon();
+
+// const iterable = [Promise.resolve('EXITO1'),Promise.resolve('EXITO2'),Promise.resolve('EXITO3'),Promise.resolve('EXITO4')];
+
+// Promise.all(iterable)
+// .then((result)=>{
+//     console.log('se resolvieron todas las promesas');
+//     console.log(result);
+// })
