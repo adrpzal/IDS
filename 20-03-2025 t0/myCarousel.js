@@ -22,7 +22,7 @@ export class MyCarousel extends HTMLElement{
         let plantilla = document.querySelector('#plantilla')
         let clone = plantilla.content.cloneNode(true)
 
-        // this.shadowRoot.innerHTML = clone;
+        
 
         
         shadow.appendChild(linkElem);

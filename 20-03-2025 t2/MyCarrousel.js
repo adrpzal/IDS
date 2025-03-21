@@ -14,7 +14,7 @@ export class MyCarrousel extends LitElement{
         #containerbtns{
             display:flex;
             margin-top:4vh;
-            margin-bottom:7vh;
+            margin-bottom:7vh;            
             height:5vh;
             align-content:center;
             justify-content: space-around;
@@ -47,6 +47,8 @@ export class MyCarrousel extends LitElement{
             border: solid 1px;
             justify-content:center;
             background-color:snow;
+            margin-left: 5vw;
+            margin-right: 5vw;
         }
         label{
             margin-right:10px;
