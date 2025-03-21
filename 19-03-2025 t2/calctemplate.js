@@ -77,8 +77,7 @@ export class CalculadoraElement extends HTMLElement{
             button.textContent = boton.text;
             buttonsContainer.appendChild(button);
         });
-
-    
+  
 
         // sumar todo al contenedor
         shadow.appendChild(linkElem);
@@ -201,7 +200,7 @@ export class CalculadoraElement extends HTMLElement{
     }
 
     /**
-     * Realiza la operacion matematica y si ya hay una resulta, utiliza el resultado para seguir operando
+     * Realiza la operacion matematica y si ya hay un resultado, utiliza el resultado para seguir operando
      */
     makeOperation(){
         if (this.operando1.length<1 || !this.valoperador || this.operando2.length<1) {

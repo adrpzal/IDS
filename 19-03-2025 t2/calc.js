@@ -17,7 +17,6 @@ export function operaciones(operador,valor1,valor2) {
     opers.set("potencia", potencia);
 
     const opera = opers.get(operador)
-
     return opera(valor1,valor2);
 }
 
