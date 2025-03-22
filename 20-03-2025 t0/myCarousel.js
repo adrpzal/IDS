@@ -7,26 +7,26 @@ export class MyCarousel extends HTMLElement{
         this.sizeh = null;
         this.sizev = null;
     }
-    
-    
+        
     static observedAttributes = ['images', 'sizeh', 'sizev']
 
     connectedCallback(){
-        const shadow = this.attachShadow({mode: 'open'}) //generar un sub arbol del DOM
+        const shadow = this.attachShadow({mode: 'open'}) 
         
         // añadir css
-        const linkElem = document.createElement("link");
-        linkElem.setAttribute("rel", "stylesheet");
-        linkElem.setAttribute("href", "style.css");
+        // const linkElem = document.createElement("link");
+        // linkElem.setAttribute("rel", "stylesheet");
+        // linkElem.setAttribute("href", "style.css");
 
-        let plantilla = document.querySelector('#plantilla')
-        let clone = plantilla.content.cloneNode(true)
-
+        const plantilla = document.querySelector('#plantilla');
+        const clone = plantilla.content.cloneNode(true);    
+        console.log(plantilla);
         
-
-        
-        shadow.appendChild(linkElem);
+        // shadow.appendChild(linkElem);
         shadow.appendChild(clone);
+
+        // Obtener elementos del shadow DOM
+        const img = shadow.querySelector('#image');
 
         //////////////////
         ////listeners/////
