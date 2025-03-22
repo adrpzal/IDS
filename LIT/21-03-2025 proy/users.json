@@ -1,0 +1,57 @@
+{
+    "users": [
+        {
+            "username": "adrian.perez",
+            "password": "asd123",
+            "nombre":"Adrian",
+            "productos": [
+                {"producto": "BBVA Black", "saldo": "1600", "deuda": "19500"},
+                {"producto": "BBVA Red", "saldo": "3900", "deuda": "19500"},
+                {"producto": "BBVA Green", "saldo": "7800", "deuda": "1000"},
+                {"producto": "BBVA Yellow", "saldo": "2500", "deuda": "19575"},
+                {"producto": "BBVA Blue", "saldo": "150", "deuda": "1900"}
+            ]
+        },
+        {
+            "username": "mariana.lopez",
+            "password": "qwerty789",
+            "nombre":"Mariana",
+            "productos": [
+                {"producto": "Santander Oro", "saldo": "5200", "deuda": "8000"},
+                {"producto": "Santander Platinum", "saldo": "3100", "deuda": "12500"},
+                {"producto": "Santander Básica", "saldo": "1000", "deuda": "2500"}
+            ]
+        },
+        {
+            "username": "carlos.mendez",
+            "password": "pass1234",
+            "nombre":"Carlos",
+            "productos": [
+                {"producto": "HSBC Advance", "saldo": "8700", "deuda": "11200"},
+                {"producto": "HSBC Premier", "saldo": "4500", "deuda": "17500"},
+                {"producto": "HSBC Básica", "saldo": "2100", "deuda": "500"}
+            ]
+        },
+        {
+            "username": "laura.gomez",
+            "password": "zxcvbnm",
+            "nombre":"Laura",
+            "productos": [
+                {"producto": "Banorte Azul", "saldo": "6600", "deuda": "9300"},
+                {"producto": "Banorte Oro", "saldo": "1200", "deuda": "7200"},
+                {"producto": "Banorte Platino", "saldo": "3900", "deuda": "15000"},
+                {"producto": "Banorte Básica", "saldo": "500", "deuda": "1200"}
+            ]
+        },
+        {
+            "username": "fernando.ruiz",
+            "password": "abc987",
+            "nombre":"Fernando",
+            "productos": [
+                {"producto": "Scotiabank Clásica", "saldo": "3300", "deuda": "8900"},
+                {"producto": "Scotiabank Oro", "saldo": "2700", "deuda": "6400"},
+                {"producto": "Scotiabank Black", "saldo": "9100", "deuda": "22000"}
+            ]
+        }
+    ]
+}

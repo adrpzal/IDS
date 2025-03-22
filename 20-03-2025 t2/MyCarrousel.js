@@ -56,7 +56,6 @@ export class MyCarrousel extends LitElement{
         }
     `;
 
-
     constructor(){
         super();
         this.imagesArr = [];
