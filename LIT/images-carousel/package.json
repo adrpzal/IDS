@@ -1,0 +1,25 @@
+{
+  "name": "images-carousel",
+  "version": "1.0.0",
+  "description": "web component to show image carrousel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "web-dev-server --node-resolve --open --watch"
+  },
+  "keywords": [
+    "web",
+    "component",
+    "html",
+    "lit",
+    "css"
+  ],
+  "author": "adrianpz",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6"
+  }
+}
