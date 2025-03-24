@@ -9,10 +9,36 @@ export class Loader extends LitElement{
         users: { type: Array }
     };
 
+    static styles = css`
+        *{
+        margin:0;
+        padding:0;
+        }
+        #loadercontainer{
+            width:100vw;
+            height:100vh;
+            display:flex;
+            flex-direction:column;            
+            align-items:center;
+            justify-items:center;
+            overflow:hidden;
+        }
+
+        img{   
+            position:absolute; 
+            top:0;
+            height:100%;   
+            object-position:center;
+            object-fit:contain;     
+        }
+    `
+
 
     render() {
         return html`
-            <img src="img/Lightstream-2x.webp" width="700px" height="900px" style="position:absolute; top:0;left:0" >
+            <div id="loadercontainer">
+                <img src="img/Lightstream-2x.webp">
+            </div>
         `;
     }
 

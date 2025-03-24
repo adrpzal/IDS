@@ -15,40 +15,44 @@ export class Login extends LitElement{
     static styles = css`
         
         #containerlogin{
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            width:70vw;
+            width:80vw;
             height:80vh;
-            /* background-color:red; */
-            min-height:400px;
+            display:flex;
+            flex-direction:column;            
+            align-items:center;
         }
 
         #containerfields{
             display:flex;
             flex-direction:column;
-            margin-top:10vh;
+            height:50%;
+            width:100%;
+            justify-content:center;
+            align-items:center;
         }
 
-        input{
-            margin-top:5vh;            
-            width:40vw;
+        input{ 
+        width:50vw;
+            margin-top:3vh;
+            height:4vh;
             font-size:1rem;
-            padding: 1.2rem;
+            padding: 4%;
             border-radius:5px;
             font-family: 'BentonSans thin';
         }
 
         #containerbtn{
-            margin-top:20vh;
+            display:flex;
+            height:50%;
+            align-items:center;
         }
 
         button{
-            font-size:1.5rem;
-            padding:1rem;
+            font-size:1.2rem;
+            width:40vw;
+            height:6vh;
             background-color: white;
             color:var(--gral-bg-color, blue);
-            border-radius:7px;   
             font-family: 'BentonSans Regular';        
         }
 
@@ -57,8 +61,8 @@ export class Login extends LitElement{
         }
     `;
 
-    loadUsers() {
-        fetch('http://localhost:3000/users')
+    async loadUsers() {
+        const usuarios = await fetch('http://localhost:3000/users')
         .then(response => response.json())
         .then(resp => {
             this.users = resp;
@@ -67,12 +71,13 @@ export class Login extends LitElement{
         .catch(error => console.log(error));
     }
 
+    
     render() {
         return html`
             <div id="containerlogin">
                 <div id="containerfields">                    
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuario">
-                    <input type="password" name="pwd" id="pwd" placeholder="Contraseña">
+                    <input type="text" name="usuario" id="usuario" placeholder="Usuario"/>
+                    <input type="password" name="pwd" id="pwd" placeholder="Contraseña"/>
                 </div>
                 <div id="containerbtn">
                     <button id="btnlogin" @click="${this._getLogin}">Iniciar sesión</button>
@@ -81,17 +86,16 @@ export class Login extends LitElement{
         `;
     }
 
-    _getLogin(){
+    async _getLogin(){
         const usuario =this.shadowRoot.querySelector('#usuario').value.trim();
         const pwd =this.shadowRoot.querySelector('#pwd').value.trim();
         
-        if (!usuario || !pwd) {
+        if (!usuario || !pwd) {            
             console.error("Los campos no pueden estar vacíos");
             return;            
         }
         
-        this.loadUsers();
-
+        await this.loadUsers();
         const userFound = this.users.find(user => user.username === usuario && user.password === pwd);
 
         if (userFound) {

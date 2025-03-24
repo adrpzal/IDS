@@ -1,20 +1,20 @@
 import { LitElement, html, css } from "lit";
-
+import {choose} from 'lit/directives/choose.js';
+import {when} from 'lit/directives/when.js';
+import { Details } from "./Details";
 export class General extends LitElement{
     constructor(){
         super();
         this.datausr = {
-            username: 'mariana.lopez',
-            password: 'qwerty789',
-            nombre: 'Mariana',
-            productos: [
-              { id: 1, nombre: 'Producto A', precio: 100 },
-              { id: 2, nombre: 'Producto B', precio: 200 },
-              { id: 3, nombre: 'Producto C', precio: 300 }
-            ]
+            username: '',
+            password: '',
+            nombre: '',
+            productos: [],
         };
         this.hidescroll = true;
         this.hidemoretag = false;
+        this.showDetail = false;
+        this.cardselected = null;
     }
     
     static properties = {
@@ -22,13 +22,39 @@ export class General extends LitElement{
         hidescroll : { type: Boolean },
         hidemoretag : {type: Boolean },
         productos : {type: Object },
+        showDetail: {type: Boolean},
+        cardselected:{type:Number}
     };
 
 
     static styles = css` 
+        #containergral{
+            width:80vw;
+            height:80vh;
+            display:flex;
+            flex-direction:column;            
+            align-items:center;
+        }
+        
+        #close{
+            width:100%;
+            padding-top:2vh;
+            padding-right:10vw;
+            display:flex;
+            flex-direction:row;
+            justify-content:end; 
+        }  
+        
+
+
+        #close span{
+         font-size:0.9rem;
+            text-align:end;
+            color:snow;
+        }
+
         #welcome{
-            // background-color:red;
-            margin-top:2vh;
+            height:4vh;
             display:flex;
             justify-content: center;
             color: snow;
@@ -38,34 +64,35 @@ export class General extends LitElement{
 
 
         #containerproducts{
-            margin-top:  3vh;
+            margin-top: 2vh;
+            padding-top:2vh
+            height:70vh;
+            width:80vw;
             display:flex;
             flex-direction:column;
-            align-items:space-between;
-            gap: 5vh;
-            width:70vw;
-            height:65vh;
-            /* background-color:red; */
-            min-height:400px;
-            max-height:600px;
+            align-items:center;
+            max-height:73vh;
             font-family: 'BentonSans Regular';
+            
         }
 
         .product{
-            margin-left: 30px;
-            margin-right: 30px;
+            display:flex;
+            justify-items:center;
+            margin-top: 2vh;
+            margin-left:7vw;
+            margin-right:7vw;
             font-size:1.5rem;
-            padding:1rem;
             background-color: snow;
-            color:var(--gral-bg-color, blue);
-            border-radius:7px;   
-            font-family: 'BentonSans Regular';        
+            border-radius:12px;   
+            font-family: 'BentonSans Regular';   
+            position:relative;     
         }
 
-        .product:hover{
-            background-color:var(--sky-blue-light-color, black);
-        }
+        
         .more{
+            height:3vh;
+            padding-top:1vh;
             text-align:center;
             color:snow;
             font-size: 1rem;
@@ -79,16 +106,29 @@ export class General extends LitElement{
         width:100%
         }
 
-        .numbercard{
-        font-size:0.8rem;
-        text-aling:center;
-        width:100%;
+        #numbercard {
+            position: absolute; 
+            top: 50%; 
+            left: 36%; 
+            color: white; 
+            font-size: 0.85rem; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 5px; 
         }
 
         .vencimiento{
         font-size:0.9rem;
         }
 
+        img{
+            height:auto;
+            width:100%;
+            opacity:0.8;
+        }
+
+        .product img:hover{
+            opacity: 1;
+        }
         
         ::-webkit-scrollbar{
          width:2px;
@@ -108,21 +148,32 @@ export class General extends LitElement{
 
     render() {
         return html`
-            <div id="welcome">
-                <h2>Bienvenido(a) ${this.datausr.nombre}</h2>
-            </div>
-            <div id="containerproducts" style="overflow-y: ${this.hidescroll ? "hidden" : "scroll"}">  
-            ${this.datausr.productos.map((product) =>{
-                return html`
-                <div class="product">
-                    <p>${product.producto}</p>
-                    <p>${product.saldo}</p>
-                </div>
-                `
-            }
-
-            )}
-            <p class="more" @click="${this.showMore}" ?hidden=${this.hidemoretag}><a>ver más..</a></p>
+            
+            
+            ${choose(this.showDetail,[
+                [true, ()=> html` <app-details .dataprod=${this.datausr.productos[this.cardselected]} @toGral=${this.goToGral}></app-details>`],
+                [false, ()=>  html`
+                    <div id="containergral">
+                        <div id="close"><span @click=${this.salte}>X</span></div>
+                        <div id="welcome">
+                            <h3>Bienvenido(a) ${this.datausr.nombre}</h3>
+                        </div>
+                        <div id="containerproducts" style="overflow-y: ${this.hidescroll ? "hidden" : "scroll"}">  
+                            ${this.datausr.productos.map((product, index) =>{
+                                return html`
+                                        <div class="product">
+                                            <img src="${product.imagen}" @click=${this.clickProduct} id="${index}">
+                                            <p id="numbercard">${product.numero}</p>
+                                        </div>
+                                `
+                            })}
+                        </div>              
+                        <p class="more" @click="${this.showMore}" ?hidden=${this.hidemoretag}>ver más..</p>
+                    </div>
+                `],
+            ],
+            () => html `<h1>Error</h1>`
+            )}  
         `;
     }
 
@@ -131,23 +182,33 @@ export class General extends LitElement{
         this.hidescroll =false;
     }
 
-    // connectedCallback(){
-    //     super.connectedCallback();
-    //     console.log("desde update");
-    //     console.log(this.datausr);
-    //     console.log(this.datausr.productos);
-    //     this.requestUpdate();
-    // }
+    clickProduct(event){
+        console.log('picaste en un producto');        
+        this.cardselected = parseInt(event.target.id);
+        this.showDetail = true;
+        // const idcard = event.target.id;
+        // this.dispatchEvent(new CustomEvent('prodSelected', {
+        //     detail:{idcard},
+        //     bubbles:true,
+        //     composed:true
+        // }))
 
-    // update(){
-    //     console.log("desde update");
-    //     console.log(this.datausr);
-    //     this.datausr = {...this.datausr};
-    //     console.log(this.datausr.productos);
-    // }
+    }
 
+    goToGral(){
+        console.log('te regresate bro');
+        this.showDetail = false;
+        this.prodactual = {};
+    }  
 
-  
+    salte(){
+        console.log('te saliste bro');
+        this.dispatchEvent(new CustomEvent('salir', {
+            detail:"",
+            bubbles:true,
+            composed:true
+        }))
+    }
 }
 
 window.customElements.define('app-gralview',General);

@@ -4,7 +4,8 @@ export class ImageCarousel extends LitElement{
     constructor(){
         super();
         this.images = []; //inicializar valor por defecto de las propiedades
-        this.componentName =''
+        this.componentName ='';
+        this.title = '';
     }
 
     static properties = {
@@ -14,6 +15,12 @@ export class ImageCarousel extends LitElement{
         },
         componentName:{
             type: String
+        },
+        title:{
+            attribute:'my-title',
+        },
+        _area:{
+            state:true,
         }
     }
 
@@ -39,7 +46,7 @@ export class ImageCarousel extends LitElement{
     // metodo ciclo de vida del componente
     render(){
         return html`
-            <h1>${this.componentName}</h1>
+            <h1>${this.title}</h1>
             <button @click=${this.clickButton}>BOTON</button>
             <ul>
                 ${this.images.map(image =>{
