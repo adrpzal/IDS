@@ -13,7 +13,8 @@ export class Login extends LitElement{
     };
 
     static styles = css`
-        
+
+      
         #containerlogin{
             width:80vw;
             height:80vh;
@@ -32,13 +33,33 @@ export class Login extends LitElement{
         }
 
         input{ 
-        width:50vw;
-            margin-top:3vh;
+            width:50vw;
+            margin-top:4vh;
             height:4vh;
-            font-size:1rem;
-            padding: 4%;
+            font-size:1.2rem;
+            padding: 2%;
             border-radius:5px;
             font-family: 'BentonSans thin';
+            background-color:var(--component-bg-color, red);
+            border:none;
+            border-bottom:3px solid white; 
+            color:white;            
+        }
+
+        input:focus{
+        traslado: 
+        font-size:1.1rem;
+        outline:none;
+        }
+        
+        input::placeholder{
+        font-size:0.9rem;
+        color:white;
+        transition: font-size 0.2s ease;
+        }
+
+        input:focus::placeholder{
+        font-size:1.1rem;
         }
 
         #containerbtn{
@@ -48,12 +69,13 @@ export class Login extends LitElement{
         }
 
         button{
-            font-size:1.2rem;
+            font-size:1rem;
             width:40vw;
             height:6vh;
-            background-color: white;
-            color:var(--gral-bg-color, blue);
+            background-color: var(--medium-blue-light, blue);
+            color:snow;
             font-family: 'BentonSans Regular';        
+            border:none;
         }
 
         button:hover{
@@ -76,8 +98,8 @@ export class Login extends LitElement{
         return html`
             <div id="containerlogin">
                 <div id="containerfields">                    
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuario"/>
-                    <input type="password" name="pwd" id="pwd" placeholder="Contraseña"/>
+                    <input type="text" name="usuario" id="usuario" placeholder="Usuario" autocomplete="off">
+                    <input type="password" name="pwd" id="pwd" placeholder="Contraseña" autocomplete="off">
                 </div>
                 <div id="containerbtn">
                     <button id="btnlogin" @click="${this._getLogin}">Iniciar sesión</button>

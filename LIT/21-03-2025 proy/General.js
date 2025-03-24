@@ -45,8 +45,6 @@ export class General extends LitElement{
             justify-content:end; 
         }  
         
-
-
         #close span{
          font-size:0.9rem;
             text-align:end;
@@ -64,7 +62,7 @@ export class General extends LitElement{
 
 
         #containerproducts{
-            margin-top: 2vh;
+            margin-top: 3vh;
             padding-top:2vh
             height:70vh;
             width:80vw;
@@ -79,16 +77,22 @@ export class General extends LitElement{
         .product{
             display:flex;
             justify-items:center;
-            margin-top: 2vh;
-            margin-left:7vw;
-            margin-right:7vw;
+            margin-top: 3vh;
+            margin-left:8vw;
+            margin-right:8vw;
             font-size:1.5rem;
             background-color: snow;
-            border-radius:12px;   
+            border-radius:10px;   
             font-family: 'BentonSans Regular';   
             position:relative;     
         }
-
+        
+        .product img{
+            border-radius:10px;
+            width:100%;
+            height:auto;
+            opacity:0.9;
+        }
         
         .more{
             height:3vh;
@@ -97,9 +101,8 @@ export class General extends LitElement{
             color:snow;
             font-size: 1rem;
         }
-        .more:hover{
-            color:var(--sky-blue-light-color, black);
-        }
+
+        .more:hover{ color:var(--sky-blue-light-color, black); }
 
         span{
         text-align:center;
@@ -108,40 +111,22 @@ export class General extends LitElement{
 
         #numbercard {
             position: absolute; 
-            top: 50%; 
-            left: 36%; 
+            bottom: 30%; 
+            left: 37%; 
             color: white; 
             font-size: 0.85rem; 
-            background-color: rgba(0, 0, 0, 0.5); 
+            background-color: rgba(0, 0, 0, 0.31); 
             padding: 5px; 
         }
 
-        .vencimiento{
-        font-size:0.9rem;
-        }
+        .vencimiento{font-size:0.9rem;}
 
-        img{
-            height:auto;
-            width:100%;
-            opacity:0.8;
-        }
-
-        .product img:hover{
-            opacity: 1;
-        }
+        .product img:hover{opacity: 1;}
         
-        ::-webkit-scrollbar{
-         width:2px;
-        }
-        ::-webkit-scrollbar-track{
-            background:var(--sky-blue-light-color, black);;
-        }
-        ::-webkit-scrollbar-thumb{
-            background:var(--gral-bg-color, blue);
-        }
-        ::-webkit-scrollbar-thumb:hover{
-            background:var(--navi-blue-color, red);
-        }
+        ::-webkit-scrollbar{width:2px;}
+        ::-webkit-scrollbar-track{background:var(--sky-blue-light-color, black);}
+        ::-webkit-scrollbar-thumb{background:var(--gral-bg-color, blue);}
+        ::-webkit-scrollbar-thumb:hover{background:var(--navi-blue-color, red);}
 
     `;
 
@@ -162,7 +147,7 @@ export class General extends LitElement{
                             ${this.datausr.productos.map((product, index) =>{
                                 return html`
                                         <div class="product">
-                                            <img src="${product.imagen}" @click=${this.clickProduct} id="${index}">
+                                            <img src="${product.imagen}" @click=${this.clickProduct} id="${index}" loading="lazy">
                                             <p id="numbercard">${product.numero}</p>
                                         </div>
                                 `

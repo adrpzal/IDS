@@ -1,10 +1,8 @@
 import { LitElement, html, css} from "lit";
 import {choose} from 'lit/directives/choose.js';
-import {when} from 'lit/directives/when.js';
 
 import { Login } from "./Login";
 import { General } from "./General";
-
 import { Loader } from "./Loader";
 
 export class MyApp extends LitElement{
@@ -13,7 +11,6 @@ export class MyApp extends LitElement{
         this.loader = false;
         this.logged =false;
         this.datosusr = {};
-        this.prodactual = {};
         this.vistaActual = 'login';
     }
 
@@ -21,7 +18,6 @@ export class MyApp extends LitElement{
         loader:{type:Boolean},
         logged:{type:Boolean},
         datosusr:{type:Object},
-        prodactual:{type:Object},
         vistaActual:{type:String}
     };
 
@@ -29,8 +25,7 @@ export class MyApp extends LitElement{
         *{  
             font-family: 'BentonSans regular';
             box-sizing: border-box;
-            user-select: none;
-            
+            user-select: none;            
         }
             
         #containergral{
@@ -41,6 +36,7 @@ export class MyApp extends LitElement{
             width:100vw;
             height:100vh;
             overflow:hidden;
+            position:relative;
         }
 
         #logocontainer{
@@ -60,6 +56,11 @@ export class MyApp extends LitElement{
             height:80vh;
             background-color:var(--component-bg-color, red);
             box-shadow: 5px 5px 10px 5px var(--navi-blueh-color, red);
+        }
+
+        app-loader{
+        position:absolute;
+        top:0;
         }
 
     `;
@@ -83,69 +84,35 @@ export class MyApp extends LitElement{
         `;
     }
 
+    /**
+     * Si el login es exitoso, se reciben datos de usuario para cargar componente con detalles
+     * @param {Object} event 
+     */
     showUser(event){
         this.logged = true;
         this.loader = true;
         this.datosusr = event.detail.datausr;
         this.handleView('general');
-
     }
 
-    getOut(){
-        console.log('te saliste bro');
+    /**
+     * Llamada para cerrar sesion
+     */
+    getOut(){        
         this.logged = false;
         this.datosusr = {};
         this.handleView();
     }
 
     handleView(location){
-
-        console.log('handleview ini:');
-        console.log(this.prodactual);
-
         if (this.logged && location) {            
-            setTimeout(() => {
-                this.vistaActual = location;
-            }, 2500);
+            setTimeout(() => {this.vistaActual = location}, 2500);
             this.vistaActual = 'loader';
         }
         else {            
             setTimeout(() => {this.vistaActual = 'login'}, 2000);
             this.vistaActual = 'loader';
         }
-
-
-
     }
 
-    
-
-
 }
-
-{/* <app-loader></app-loader> */}
-
-// ${this.logged
-//     ? html` <app-gralview .datausr=${this.datosusr}></app-gralview>`
-//     : html`<login-component @signed=${this.showUser}></login-component>`
-//     }
-
-
-
-// render() {
-//     return html`
-//         <div id="containergral">
-//             <div id="logocontainer">
-//                 <img src="img/logo.jpeg" id="logoprinc">  
-//             </div>
-//             <div id="compcontainer">
-//                     ${choose(this.logged,[
-//                         [true, ()=> html` <app-gralview .datausr=${this.datosusr} @prodSelected=${this.showDetails}></app-gralview>`],
-//                         [false, ()=>  html`<login-component @signed=${this.showUser}></login-component>`],
-//                     ],
-//                     () => html `<h1>Error</h1>`
-//                     )}  
-//             </div>
-//         </div>
-//     `;
-// }

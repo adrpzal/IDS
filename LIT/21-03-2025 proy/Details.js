@@ -28,18 +28,11 @@ export class Details extends LitElement{
             display:flex;
             flex-direction:row;
             justify-content:end;
-
         }  
 
-        #close img{
-        width:5vw;
-        height: auto;
-        }
-
+        #close img{width:5vw;height: auto;}
        
-        #namecard{
-        text-align:center;
-        }
+        #namecard{text-align:center;}
 
         #imgcard{
             height:17vh;
@@ -51,10 +44,7 @@ export class Details extends LitElement{
             position:relative;
         }
 
-        #imgcard img{
-            height:100%;
-            width:auto;
-        }
+        #imgcard img{ height:100%;width:auto;}
 
         #numbercard {
             position: absolute; 
@@ -82,16 +72,18 @@ export class Details extends LitElement{
         }
 
         #infocard{
-            width:100%;
             display:flex;
             flex-direction:column;
             align-content:start;
             font-size:1rem;
             margin-top: 3vh;
-            padding-left:15vw;
+            padding-left:5vw;
             padding-right:5vw;
-            font-family: 'BentonSans Regular';  
+            font-family: 'BentonSans Regular';
+            align-self:start;
         }
+
+        li{ margin-top:1vh;}
 
     `;
 
@@ -100,7 +92,7 @@ export class Details extends LitElement{
         return html`
             <div id="containerprod">
                 <div id="close">
-                    <img src="img/close.png" @click=${this.backToGral}>
+                    <span @click=${this.backToGral}>X</span>
                 </div>
                 <div id="card">                    
                     <div id="namecard">
@@ -112,12 +104,12 @@ export class Details extends LitElement{
                         <p id="vence">${this.dataprod.vencimiento}</p>
                     </div>              
                     <div id="saldocard">
-                        <p>Saldo: $${this.dataprod.saldo} /</p>
-                        <p>/ Deuda: $${this.dataprod.deuda}</p>
+                        <p>Saldo: $${this.dataprod.saldo}</p>
+                        <p>&nbsp/ Deuda: $${this.dataprod.deuda}</p>
                     </div>              
                 </div>           
                 <div id="infocard">
-                    <h3>Beneficios</h3>
+                    <h3>Beneficios:</h3>
                     <ul>
                         <li>Un beneficio</li>
                         <li>Otro beneficio</li>
