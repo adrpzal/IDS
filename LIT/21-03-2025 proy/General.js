@@ -34,6 +34,7 @@ export class General extends LitElement{
             display:flex;
             flex-direction:column;            
             align-items:center;
+            background-color:white;
         }
         
         #close{
@@ -48,14 +49,14 @@ export class General extends LitElement{
         #close span{
          font-size:0.9rem;
             text-align:end;
-            color:snow;
+            color:black;
         }
 
         #welcome{
             height:4vh;
             display:flex;
             justify-content: center;
-            color: snow;
+            color: black;
             font-family: 'BentonSans Regular';        
             text-align-center;
         }  
@@ -84,7 +85,8 @@ export class General extends LitElement{
             background-color: snow;
             border-radius:10px;   
             font-family: 'BentonSans Regular';   
-            position:relative;     
+            position:relative;   
+            border:solid 1px gray;  
         }
         
         .product img{
@@ -98,7 +100,8 @@ export class General extends LitElement{
             height:3vh;
             padding-top:1vh;
             text-align:center;
-            color:snow;
+            color:var(--gral-bg-color, blue);
+            border-top:solid 1px;
             font-size: 1rem;
         }
 
