@@ -3,17 +3,20 @@ import { LitElement, html, css } from "lit";
 export class Login extends LitElement{
     constructor(){
         super();
-        this.users = []
+        this.users = [];
+        this.colorRand = '';
+        this.errorLog = false;
     }
 
     static properties = {
         users: { type: Array },
         usuario: {type: Array},
         pwd: {type: Array},
+        colorRand:{type:String, reflect:true},
+        errorLog:{type:Boolean, reflect:true}
     };
 
     static styles = css`
-
       
         #containerlogin{
             width:80vw;
@@ -21,7 +24,7 @@ export class Login extends LitElement{
             display:flex;
             flex-direction:column;            
             align-items:center;
-        }
+        }       
 
         #containerfields{
             display:flex;
@@ -33,12 +36,11 @@ export class Login extends LitElement{
         }
 
         input{ 
-            width:50vw;
+            width:55vw;
             margin-top:4vh;
-            height:4vh;
-            font-size:1.2rem;
+            height:4.5vh;
+            font-size:1.3rem;
             padding: 2%;
-            border-radius:5px;
             font-family: 'BentonSans thin';
             background-color:var(--component-bg-color, red);
             border:none;
@@ -62,6 +64,14 @@ export class Login extends LitElement{
         font-size:1.1rem;
         }
 
+        #logerror{
+        color:red;
+        margin-top:3vh;
+        font-size:0.75rem;
+        text-align:center;
+        display:none;
+        }
+
         #containerbtn{
             display:flex;
             height:50%;
@@ -81,6 +91,23 @@ export class Login extends LitElement{
         button:hover{
             background-color:var(--sky-blue-light-color, black);
         }
+
+        #containerfaq{
+            display:flex;
+            margin-bottom:3vh;
+            height:2.5vh;
+            align-items:center;
+            
+        }
+        #containerfaq img{
+        height:100%;
+        width:auto;
+        opacity: 0.6;
+        }
+
+        #containerfaq img:hover{
+        opacity:085;
+        }
     `;
 
     async loadUsers() {
@@ -92,7 +119,6 @@ export class Login extends LitElement{
         })
         .catch(error => console.log(error));
     }
-
     
     render() {
         return html`
@@ -100,35 +126,61 @@ export class Login extends LitElement{
                 <div id="containerfields">                    
                     <input type="text" name="usuario" id="usuario" placeholder="Usuario" autocomplete="off">
                     <input type="password" name="pwd" id="pwd" placeholder="Contraseña" autocomplete="off">
+                    <span id="logerror">Usuario o contraseña incorrectos</span>
                 </div>
                 <div id="containerbtn">
                     <button id="btnlogin" @click="${this._getLogin}">Iniciar sesión</button>
+                </div>
+                <div id="containerfaq">
+                    <img src="img/pregunta.png" @click="${this.changeAttr}"></button>
                 </div>
             </div>  
         `;
     }
 
     async _getLogin(){
-        const usuario =this.shadowRoot.querySelector('#usuario').value.trim();
-        const pwd =this.shadowRoot.querySelector('#pwd').value.trim();
+        const usuario =this.shadowRoot.querySelector('#usuario');
+        const pwd =this.shadowRoot.querySelector('#pwd');
         
-        if (!usuario || !pwd) {            
+        if (!usuario.value.trim() || !pwd.value.trim()) {            
             console.error("Los campos no pueden estar vacíos");
             return;            
         }
         
         await this.loadUsers();
-        const userFound = this.users.find(user => user.username === usuario && user.password === pwd);
+        const userFound = this.users.find(user => user.username === usuario.value.trim() && user.password === pwd.value.trim());
 
         if (userFound) {
             // console.log("entraste");
-            // console.log(userFound);
             this.dispatchEvent(new CustomEvent('signed', {
                 detail: {datausr: userFound},
                 bubbles: true,
                 composed: true
             }))
-        } else {alert("no se encuentra")}
+        } else { this.errorLog = true;this.onLogError(usuario,pwd)};
+    }
+
+    /**
+     * Cambiamos el color del botón
+     */
+    changeAttr(){
+        const colores = ['#07214669','black','#1464A5','#043263']
+        const rand = Math.floor(Math.random()*4);
+        this.colorRand = colores[rand];
+        console.log(this.colorRand);
+        const boton = this.shadowRoot.getElementById('btnlogin');
+        boton.style.backgroundColor = `${this.colorRand}`;
+    }
+
+    onLogError(user,pass){
+        const showmsj = this.shadowRoot.getElementById('logerror');
+       if (this.errorLog) {
+        showmsj.style.display = 'block';
+        user.value = '';
+        user.style.backgroundColor = 'red';
+        pass.value = '';
+        pass.style.backgroundColor = 'red';
+       }
     }
 
 }

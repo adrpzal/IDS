@@ -93,19 +93,20 @@ export class General extends LitElement{
             border-radius:10px;
             width:100%;
             height:auto;
-            opacity:0.9;
+            opacity:0.85;
         }
         
-        .more{
-            height:3vh;
-            padding-top:1vh;
+        
+        #more{
+            width:100%;
             text-align:center;
-            color:var(--gral-bg-color, blue);
+            background-color:var(--medium-blue-light, blue);
+            color:white;
             border-top:solid 1px;
             font-size: 1rem;
         }
 
-        .more:hover{ color:var(--sky-blue-light-color, black); }
+        #more:hover{ color:var(--sky-blue-light-color, black); }
 
         span{
         text-align:center;
@@ -118,8 +119,8 @@ export class General extends LitElement{
             left: 37%; 
             color: white; 
             font-size: 0.85rem; 
-            background-color: rgba(0, 0, 0, 0.31); 
-            padding: 5px; 
+            /* background-color: rgba(0, 0, 0, 0.31); 
+            padding: 4px; */
         }
 
         .vencimiento{font-size:0.9rem;}
@@ -133,10 +134,8 @@ export class General extends LitElement{
 
     `;
 
-
     render() {
         return html`
-            
             
             ${choose(this.showDetail,[
                 [true, ()=> html` <app-details .dataprod=${this.datausr.productos[this.cardselected]} @toGral=${this.goToGral}></app-details>`],
@@ -155,8 +154,10 @@ export class General extends LitElement{
                                         </div>
                                 `
                             })}
-                        </div>              
-                        <p class="more" @click="${this.showMore}" ?hidden=${this.hidemoretag}>ver más..</p>
+                        </div>  
+                        <div id="more">
+                            <p class="more" @click="${this.showMore}" ?hidden=${this.hidemoretag}>ver más..</p>
+                        </div>            
                     </div>
                 `],
             ],
@@ -171,26 +172,19 @@ export class General extends LitElement{
     }
 
     clickProduct(event){
-        console.log('picaste en un producto');        
+        console.log('picaste en producto');        
         this.cardselected = parseInt(event.target.id);
         this.showDetail = true;
-        // const idcard = event.target.id;
-        // this.dispatchEvent(new CustomEvent('prodSelected', {
-        //     detail:{idcard},
-        //     bubbles:true,
-        //     composed:true
-        // }))
-
     }
 
     goToGral(){
-        console.log('te regresate bro');
+        console.log('te regresate');
         this.showDetail = false;
         this.prodactual = {};
     }  
 
     salte(){
-        console.log('te saliste bro');
+        console.log('te saliste ');
         this.dispatchEvent(new CustomEvent('salir', {
             detail:"",
             bubbles:true,

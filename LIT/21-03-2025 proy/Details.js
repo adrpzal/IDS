@@ -12,6 +12,7 @@ export class Details extends LitElement{
 
 
     static styles = css` 
+        *{margin:0;padding:0;}
         #containerprod{
             width:80vw;
             height:80vh;
@@ -72,18 +73,19 @@ export class Details extends LitElement{
         }
 
         #infocard{
+            margin-top: 5vh;
+            width:65vw;
             display:flex;
             flex-direction:column;
-            align-content:start;
+            align-items:start;
             font-size:1rem;
-            margin-top: 3vh;
-            padding-left:5vw;
-            padding-right:5vw;
             font-family: 'BentonSans Regular';
-            align-self:start;
+            text-align:justify;
         }
 
-        li{ margin-top:1vh;}
+        ul{ margin-bottom:3vh;}
+
+        li{ margin-top:1.5vh;margin-left:5vw;}
 
     `;
 
@@ -111,9 +113,7 @@ export class Details extends LitElement{
                 <div id="infocard">
                     <h3>Beneficios:</h3>
                     <ul>
-                        <li>Un beneficio</li>
-                        <li>Otro beneficio</li>
-                        <li>Otro beneficio más</li>
+                        ${this.dataprod.beneficios.map(beneficio => html`<li>${beneficio}.</li>`)}
                     </ul>
                 </div>                           
             </div>

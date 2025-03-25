@@ -5,12 +5,60 @@
             "password": "asd123",
             "nombre":"Adrian",
             "productos": [
-                {"producto": "BBVA Infinite", "numero":"215698543265", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA IPN", "numero":"152369857254", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg"},
-                {"producto": "BBVA Rayados", "numero":"258756513204", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg"},
-                {"producto": "BBVA Oro", "numero":"968540321687", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg"},
-                {"producto": "BBVA IPN", "numero":"125696357581", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg"},
-                {"producto": "BBVA Blue", "numero":"125749675832", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg"}
+                {
+                  "producto": "BBVA Infinite", "numero": "215698543265", "saldo": "1600", "deuda": "19500", "vencimiento": "02/2026", "imagen": "img/cards/infinite.jpg", 
+                  "beneficios": [
+                    "Acceso a salas VIP en aeropuertos",
+                    "Seguro de viajes internacional",
+                    "Asistencia en viajes 24/7",
+                    "Promociones exclusivas en hoteles y restaurantes"
+                  ]
+                },
+                {
+                  "producto": "BBVA IPN", "numero": "152369857254", "saldo": "3900", "deuda": "19500", "vencimiento": "03/2027", "imagen": "img/cards/ipn.jpg", 
+                  "beneficios": [
+                    "Recompensas por compras",
+                    "Descuentos en tiendas y restaurantes",
+                    "Seguro de protección de compras",
+                    "Sin comisiones por compras internacionales"
+                  ]
+                },
+                {
+                  "producto": "BBVA Rayados", "numero": "258756513204", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2028", "imagen": "img/cards/rayados.jpg", 
+                  "beneficios": [
+                    "Acceso a eventos exclusivos del club Rayados",
+                    "Descuentos en mercancía oficial del club",
+                    "Promociones especiales en partidos",
+                    "Acceso preferencial a boletos para partidos"
+                  ]
+                },
+                {
+                  "producto": "BBVA Oro", "numero": "968540321687", "saldo": "2500", "deuda": "19575", "vencimiento": "01/2026", "imagen": "img/cards/oro.jpg", 
+                  "beneficios": [
+                    "Descuentos en supermercados y comercios",
+                    "Asistencia en viajes y seguros de automóvil",
+                    "Acceso a eventos exclusivos",
+                    "Bonificaciones por uso frecuente"
+                  ]
+                },
+                {
+                  "producto": "BBVA IPN", "numero": "125696357581", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen": "img/cards/ipn.jpg", 
+                  "beneficios": [
+                    "Recompensas por compras",
+                    "Descuentos en tiendas y restaurantes",
+                    "Seguro de protección de compras",
+                    "Sin comisiones por compras internacionales"
+                  ]
+                },
+                {
+                  "producto": "BBVA Blue", "numero": "125749675832", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen": "img/cards/azul.jpg", 
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]
+                }
             ]
         },
         {
@@ -18,13 +66,55 @@
             "password": "qwerty789",
             "nombre":"Mariana",
             "productos": [
-                {"producto": "BBVA Infinite", "numero":"525698542156", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA IPN", "numero":"125698531246", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg"},
-                {"producto": "BBVA Rayados", "numero":"258756513204", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg"},
-                {"producto": "BBVA Infinite", "numero":"136582694102", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA Oro", "numero":"968540321687", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg"},
-                {"producto": "BBVA Blue", "numero":"206586874513", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg"},
-                {"producto": "BBVA Oro", "numero":"300269410587", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg"}
+                {"producto": "BBVA Infinite", "numero":"525698542156", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA IPN", "numero":"125698531246", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Rayados", "numero":"258756513204", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Infinite", "numero":"136582694102", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Oro", "numero":"968540321687", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Blue", "numero":"206586874513", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Oro", "numero":"300269410587", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]}
             ]
         },
         {
@@ -32,14 +122,62 @@
             "password": "anne123",
             "nombre":"Anne",
             "productos": [
-                {"producto": "BBVA Infinite", "numero":"611320795162", "saldo": "99,460.00", "deuda": "0.00", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA IPN", "numero":"023569821467", "saldo": "39760.00", "deuda": "0.00", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg"},
-                {"producto": "BBVA Infinite", "numero":"302651094685", "saldo": "16.00", "deuda": "195.00", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA Infinite", "numero":"302054612358", "saldo": "16.00", "deuda": "195.00", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA Rayados", "numero":"102065498310", "saldo": "78.00", "deuda": "10.00", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg"},
-                {"producto": "BBVA Oro", "numero":"206459831026", "saldo": "25.00", "deuda": "195.75", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg"},
-                {"producto": "BBVA Blue", "numero":"203569210485", "saldo": "1.50", "deuda": "19.00", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg"},
-                {"producto": "BBVA Oro", "numero":"203625987402", "saldo": "25.00", "deuda": "195.75", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg"}
+                {"producto": "BBVA Infinite", "numero":"611320795162", "saldo": "99,460.00", "deuda": "0.00", "vencimiento": "04/2025", "imagen":"img/cards/infinite.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA IPN", "numero":"023569821467", "saldo": "39760.00", "deuda": "0.00", "vencimiento": "06/2026", "imagen":"img/cards/ipn.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Infinite", "numero":"302651094685", "saldo": "16.00", "deuda": "195.00", "vencimiento": "02/2028", "imagen":"img/cards/infinite.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Infinite", "numero":"302054612358", "saldo": "16.00", "deuda": "195.00", "vencimiento": "09/2027", "imagen":"img/cards/infinite.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Rayados", "numero":"102065498310", "saldo": "78.00", "deuda": "10.00", "vencimiento": "11/2029", "imagen":"img/cards/rayados.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Oro", "numero":"206459831026", "saldo": "25.00", "deuda": "195.75", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Blue", "numero":"203569210485", "saldo": "1.50", "deuda": "19.00", "vencimiento": "02/2028", "imagen":"img/cards/azul.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Oro", "numero":"203625987402", "saldo": "25.00", "deuda": "195.75", "vencimiento": "01/2027", "imagen":"img/cards/oro.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]}
             ]
         },
         {
@@ -47,11 +185,41 @@
             "password": "zxcvbnm",
             "nombre":"Laura",
             "productos": [
-                {"producto": "BBVA Infinite", "numero":"106983014602", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA IPN", "numero":"203605047192", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg"},
-                {"producto": "BBVA Rayados", "numero":"203620149605", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg"},
-                {"producto": "BBVA Oro", "numero":"203620154081", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg"},
-                {"producto": "BBVA Blue", "numero":"203906204107", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg"}
+                {"producto": "BBVA Infinite", "numero":"106983014602", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA IPN", "numero":"203605047192", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Rayados", "numero":"203620149605", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Oro", "numero":"203620154081", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Blue", "numero":"203906204107", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]}
             ]
         },
         {
@@ -59,11 +227,41 @@
             "password": "abc987",
             "nombre":"Fernando",
             "productos": [
-                {"producto": "BBVA Infinite", "numero":"5646184564564", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg"},
-                {"producto": "BBVA IPN", "numero":"125698531246", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg"},
-                {"producto": "BBVA Rayados", "numero":"258756513204", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg"},
-                {"producto": "BBVA Oro", "numero":"968540321687", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg"},
-                {"producto": "BBVA Blue", "numero":"961420508732", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg"}
+                {"producto": "BBVA Infinite", "numero":"5646184564564", "saldo": "1600", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/infinite.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA IPN", "numero":"125698531246", "saldo": "3900", "deuda": "19500", "vencimiento": "05/2027", "imagen":"img/cards/ipn.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Rayados", "numero":"258756513204", "saldo": "7800", "deuda": "1000", "vencimiento": "05/2027", "imagen":"img/cards/rayados.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Oro", "numero":"968540321687", "saldo": "2500", "deuda": "19575", "vencimiento": "05/2027", "imagen":"img/cards/oro.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]},
+                {"producto": "BBVA Blue", "numero":"961420508732", "saldo": "150", "deuda": "1900", "vencimiento": "05/2027", "imagen":"img/cards/azul.jpg",
+                  "beneficios": [
+                    "Acceso a descuentos en tiendas seleccionadas",
+                    "Promociones exclusivas para jóvenes",
+                    "Sin anualidad durante el primer año",
+                    "Acumulación de puntos para recompensas"
+                  ]}
             ]
         }
     ]
