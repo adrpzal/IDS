@@ -120,7 +120,7 @@
         {
             "username": "anne.resendiz",
             "password": "anne123",
-            "nombre":"Anne",
+            "nombre":"Ana",
             "productos": [
                 {"producto": "BBVA Infinite", "numero":"611320795162", "saldo": "99,460.00", "deuda": "0.00", "vencimiento": "04/2025", "imagen":"img/cards/infinite.jpg",
                   "beneficios": [
