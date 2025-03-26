@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch"
+
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6"
+  }
+}
